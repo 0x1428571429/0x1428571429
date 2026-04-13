@@ -1,31 +1,30 @@
-
-<h1 align="center">𝑯𝒊, 𝑰'𝒎<a href="https://alili.tech/">{𝑭.𝑨.𝑵}</a>!</h1>
-<h1 align="center">𝒂 𝑭𝒓𝒐𝒏𝒕-𝒆𝒏𝒅 𝑬𝒏𝒈𝒊𝒏𝒆𝒆𝒓  </h1>
+<h1 align="center">Hi, I'm<a href="https://alili.tech/">{F.A.N}</a>!</h1>
+<h1 align="center">a Frontend Engineer  </h1>
 
 
 <p align="center">
-  <strong><a href="https://alili.tech">𝑩𝒍𝒐𝒈</a></strong> |
-  <strong><a href="https://www.zhihu.com/people/fantastics/posts">𝒁𝒉𝒊𝒉𝒖</a></strong> |
-  <strong><a href="https://juejin.im/user/606586147454599">𝑱𝒖𝒆𝒋𝒊𝒏</a></strong>  |
-  <strong><a href="https://alili.tech/about/">𝑨𝒃𝒐𝒖𝒕</a></strong>  
+  <strong><a href="https://alili.tech">Blog</a></strong> |
+  <strong><a href="https://www.zhihu.com/people/fantastics/posts">Zhihu</a></strong> |
+  <strong><a href="https://juejin.im/user/606586147454599">Juejin</a></strong>  |
+  <strong><a href="https://alili.tech/about/">About</a></strong>  
 </p>
-<a href="https://alili.tech"><p align="center">𝑽𝒊𝒔𝒊𝒕𝒐𝒓 𝒄𝒐𝒖𝒏𝒕<br> <img src="https://profile-counter.glitch.me/Fantasy9527/count.svg" /></a>
+<a href="https://alili.tech"><p align="center">Visitor count<br> <img src="https://profile-counter.glitch.me/Fantasy9527/count.svg" /></a>
 
 ##  [BLOG](https://alili.tech)
 <a href="https://alili.tech"><img src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif" align="right" height="275" /></a>
-- 👨🏻‍💻  [𝑴𝒊𝒄𝒓𝒐 𝑭𝒓𝒐𝒏𝒕𝒆𝒏𝒅](https://alili.tech/tags/microfrontend/)
-- 👩🏻‍💻  [𝑻𝒂𝒓𝒐](https://alili.tech/tags/taro/)
-- 👨🏻‍💻  [𝑹𝒂𝒔𝒑𝒃𝒆𝒓𝒓𝒚 𝑷𝒊](https://alili.tech/tags/raspberry-pi/)
-- 👩🏻‍💻  [𝑵𝒐𝒅𝒆𝒋𝒔](https://alili.tech/tags/nodejs/)
-- 👨🏻‍💻  [𝑪𝑰&𝑪𝑫](https://alili.tech/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/)
-- 👩🏻‍💻  [𝑴𝒂𝒕𝒉](https://alili.tech/tags/%E6%95%B0%E5%AD%A6/)
-- 👨🏻‍💻  [𝑷𝒖𝒑𝒑𝒆𝒕𝒆𝒆𝒓](https://alili.tech/tags/puppeteer/)
-- 👩🏻‍💻  [𝑱𝒂𝒗𝒂𝒔𝒄𝒓𝒊𝒑𝒕](https://alili.tech/tags/javascript/)
-- 👨🏻‍💻  [𝑴𝒂𝒄 𝑶𝑺](https://alili.tech/tags/mac/)
-- 👩🏻‍💻  [𝑨𝒏𝒈𝒖𝒍𝒂𝒓](https://alili.tech/tags/angular/)
+- 👨🏻‍💻  [Micro Frontend](https://alili.tech/tags/microfrontend/)
+- 👩🏻‍💻  [Taro](https://alili.tech/tags/taro/)
+- 👨🏻‍💻  [Raspberry Pi](https://alili.tech/tags/raspberry-pi/)
+- 👩🏻‍💻  [Nodejs](https://alili.tech/tags/nodejs/)
+- 👨🏻‍💻  [CI&CD](https://alili.tech/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/)
+- 👩🏻‍💻  [Math](https://alili.tech/tags/%E6%95%B0%E5%AD%A6/)
+- 👨🏻‍💻  [Puppeteer](https://alili.tech/tags/puppeteer/)
+- 👩🏻‍💻  [Javascript](https://alili.tech/tags/javascript/)
+- 👨🏻‍💻  [Mac OS](https://alili.tech/tags/mac/)
+- 👩🏻‍💻  [Angular](https://alili.tech/tags/angular/)
 
 
-## 𝑴𝒚 𝑻𝒆𝒄𝒌 𝑺𝒕𝒂𝒄𝒌
+## My Tech Stack
 
 [![OS](https://img.shields.io/badge/OS-macOS-informational?style=flat-square&logo=apple&logoColor=white&color=2bbc8a)](https://en.wikipedia.org/wiki/MacOS)
 [![OS](https://img.shields.io/badge/OS-Linux-informational?style=flat-square&logo=linux&logoColor=white&color=2bbc8a)](https://en.wikipedia.org/wiki/Linux)
@@ -57,13 +56,9 @@
 <img alt="MongoDB" src="https://img.shields.io/badge/Tools-MongoDB-informational?style=flat-square&logo=mongodb&logoColor=white&color=2bbc8a" />
 
 
-## 𝑺𝒕𝒂𝒕𝒔
+## Stats
 
 <p align="left">
 
 <img alt="ouuan's github stats" height='230' src="https://github-readme-stats.vercel.app/api/top-langs/?username=Num142857">
 </p>
-
-
-
-
