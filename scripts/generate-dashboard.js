@@ -84,16 +84,16 @@ function genHeader(theme, u, quote, totalStars) {
     ['followers', u ? fmt(u.followers||0) : '-'],
   ];
   const hasQuote = quote && quote.en;
-  const h = hasQuote ? 140 : 100;
+  const h = hasQuote ? 150 : 100;
 
   make(`header.${theme}.svg`, theme, h, t => {
     let o = '';
-    o += `<text x="${P}" y="36" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">There is no place like 127.0.0.1</text>\n`;
+    o += `<text x="${P}" y="34" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">There is no place like 127.0.0.1</text>\n`;
     if(hasQuote) {
-      o+=`<text x="${P}" y="64" fill="${t.dim}" font-size="16" font-family="${SANS}">${esc(tr(quote.en,75))}</text>\n`;
-      o+=`<text x="${P}" y="84" fill="${t.dim}" font-size="16" font-family="${MONO}">${esc('—— '+quote.author)}</text>\n`;
+      o+=`<text x="${P}" y="68" fill="${t.dim}" font-size="16" font-family="${SANS}">${esc(tr(quote.en,75))}</text>\n`;
+      o+=`<text x="${P}" y="90" fill="${t.dim}" font-size="16" font-family="${MONO}">${esc('—— '+quote.author)}</text>\n`;
     }
-    const lineY = hasQuote ? 108 : 72;
+    const lineY = hasQuote ? 116 : 68;
     const statY = lineY + 24;
     o += `<line x1="${P}" y1="${lineY}" x2="${W-P}" y2="${lineY}" stroke="${t.border}" stroke-width="1"/>\n`;
 
