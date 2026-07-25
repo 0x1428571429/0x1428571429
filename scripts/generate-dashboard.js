@@ -84,24 +84,24 @@ function genHeader(theme, u, quote) {
     ['followers', u ? fmt(u.followers||0) : '-'],
   ];
   const hasQuote = quote && quote.en;
-  const h = hasQuote ? 170 : 120;
+  const h = hasQuote ? 140 : 100;
 
   make(`header.${theme}.svg`, theme, h, t => {
     let o = '';
-    o += `<text x="${P}" y="22" fill="${t.dim}" font-size="11" font-family="${MONO}">${USER}</text>\n`;
-    o += `<text x="${P}" y="50" fill="${t.text}" font-size="26" font-family="${SANS}" font-weight="600">${NAME}</text>\n`;
+    o += `<text x="${P}" y="16" fill="${t.dim}" font-size="10" font-family="${MONO}">${USER}</text>\n`;
+    o += `<text x="${P}" y="40" fill="${t.text}" font-size="22" font-family="${SANS}" font-weight="600">${NAME}</text>\n`;
     if(hasQuote) {
-      o+=`<text x="${P}" y="72" fill="${t.dim}" font-size="12" font-family="${SANS}">${esc(tr(quote.en,85))}</text>\n`;
-      o+=`<text x="${P}" y="88" fill="${t.dim}" font-size="11" font-family="${MONO}">${esc('—— '+quote.author)}</text>\n`;
+      o+=`<text x="${P}" y="60" fill="${t.dim}" font-size="11" font-family="${SANS}">${esc(tr(quote.en,85))}</text>\n`;
+      o+=`<text x="${P}" y="74" fill="${t.dim}" font-size="10" font-family="${MONO}">${esc('—— '+quote.author)}</text>\n`;
     }
-    const lineY = hasQuote ? 108 : 80;
-    const statY = lineY + 24;
+    const lineY = hasQuote ? 92 : 68;
+    const statY = lineY + 18;
     o += `<line x1="${P}" y1="${lineY}" x2="${W-P}" y2="${lineY}" stroke="${t.border}" stroke-width="1"/>\n`;
 
     stats.forEach(([l,v],i)=>{
       const sx=P+i*160;
-      o+=`<text x="${sx}" y="${statY}" fill="${t.text}" font-size="13" font-family="${MONO}">${v}</text>\n`;
-      o+=`<text x="${sx+46}" y="${statY}" fill="${t.dim}" font-size="12" font-family="${MONO}">${l}</text>\n`;
+      o+=`<text x="${sx}" y="${statY}" fill="${t.text}" font-size="12" font-family="${MONO}">${v}</text>\n`;
+      o+=`<text x="${sx+40}" y="${statY}" fill="${t.dim}" font-size="11" font-family="${MONO}">${l}</text>\n`;
     });
     return o;
   });
