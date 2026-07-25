@@ -1,0 +1,100 @@
+name: Metrics
+on:
+  schedule: [{cron: "0 0 * * *"}]
+  workflow_dispatch:
+  push: {branches: ["master", "main"]}
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        name: Isometric calendar (dark)
+        with:
+          filename: metrics.isocalendar.dark.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: dark
+          config_timezone: Asia/Shanghai
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+      - uses: lowlighter/metrics@latest
+        name: Starred topics (dark)
+        with:
+          filename: metrics.topics.dark.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: dark
+          plugin_topics: yes
+          plugin_topics_limit: 15
+          plugin_topics_mode: starred
+
+      - uses: lowlighter/metrics@latest
+        name: Recent activity (dark)
+        with:
+          filename: metrics.activity.dark.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: dark
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 0
+          plugin_activity_filter: issue, pr, push, fork, review, release
+
+      - uses: lowlighter/metrics@latest
+        name: Isometric calendar (light)
+        with:
+          filename: metrics.isocalendar.light.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: light
+          config_timezone: Asia/Shanghai
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+      - uses: lowlighter/metrics@latest
+        name: Starred topics (light)
+        with:
+          filename: metrics.topics.light.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: light
+          plugin_topics: yes
+          plugin_topics_limit: 15
+          plugin_topics_mode: starred
+
+      - uses: lowlighter/metrics@latest
+        name: Recent activity (light)
+        with:
+          filename: metrics.activity.light.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: light
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 0
+          plugin_activity_filter: issue, pr, push, fork, review, release
+
+      - uses: lowlighter/metrics@latest
+        name: Blog posts (dark)
+        with:
+          filename: metrics.blog.dark.svg
+          token: NOT_NEEDED
+          base: ""
+          config_skin: dark
+          plugin_rss: yes
+          plugin_rss_source: https://time-friend.com/en/index.xml
+          plugin_rss_limit: 10
+
+      - uses: lowlighter/metrics@latest
+        name: Blog posts (light)
+        with:
+          filename: metrics.blog.light.svg
+          token: NOT_NEEDED
+          base: ""
+          config_skin: light
+          plugin_rss: yes
+          plugin_rss_source: https://time-friend.com/en/index.xml
+          plugin_rss_limit: 10
