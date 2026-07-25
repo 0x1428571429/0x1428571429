@@ -1,23 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="620" height="216" viewBox="0 0 620 216">
-<rect width="620" height="216" fill="#1a1b2f" rx="12"/>
-<text x="24" y="24" fill="#ff7eb3" font-size="14" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace" font-weight="bold">Languages</text>
-<line x1="24" y1="34" x2="596" y2="34" stroke="#9899b9" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="24" y="48" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">JavaScript</text>
-<rect x="130" y="42" width="199.14893617021278" height="10" fill="#f1e05a" rx="5"/>
-<text x="390" y="48" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">83.0%</text>
-<text x="24" y="76" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">HTML</text>
-<rect x="130" y="70" width="20.425531914893618" height="10" fill="#e34c26" rx="5"/>
-<text x="390" y="76" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">8.5%</text>
-<text x="24" y="104" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">Rich Text Format</text>
-<rect x="130" y="98" width="10" height="10" fill="#ff7eb3" rx="5"/>
-<text x="390" y="104" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">2.1%</text>
-<text x="24" y="132" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">TypeScript</text>
-<rect x="130" y="126" width="10" height="10" fill="#3178c6" rx="5"/>
-<text x="390" y="132" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">2.1%</text>
-<text x="24" y="160" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">C++</text>
-<rect x="130" y="154" width="10" height="10" fill="#f34b7d" rx="5"/>
-<text x="390" y="160" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">2.1%</text>
-<text x="24" y="188" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">CSS</text>
-<rect x="130" y="182" width="10" height="10" fill="#563d7c" rx="5"/>
-<text x="390" y="188" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">2.1%</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="260" viewBox="0 0 960 260">
+<rect width="960" height="260" fill="#111111" rx="0"/>
+<text x="28" y="24" fill="#e8e8e8" font-size="13" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">Languages</text>
+<text x="28" y="56" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">JavaScript</text>
+<rect x="140" y="50" width="464.6808510638298" height="10" fill="#f0db4f" rx="5"/>
+<text x="720" y="56" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">83.0%</text>
+<text x="28" y="90" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">HTML</text>
+<rect x="140" y="84" width="47.659574468085104" height="10" fill="#e44d26" rx="5"/>
+<text x="720" y="90" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">8.5%</text>
+<text x="28" y="124" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">Rich Text Format</text>
+<rect x="140" y="118" width="11.914893617021276" height="10" fill="#e8e8e8" rx="5"/>
+<text x="720" y="124" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2.1%</text>
+<text x="28" y="158" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">TypeScript</text>
+<rect x="140" y="152" width="11.914893617021276" height="10" fill="#2f74c0" rx="5"/>
+<text x="720" y="158" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2.1%</text>
+<text x="28" y="192" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">C++</text>
+<rect x="140" y="186" width="11.914893617021276" height="10" fill="#004482" rx="5"/>
+<text x="720" y="192" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2.1%</text>
+<text x="28" y="226" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">CSS</text>
+<rect x="140" y="220" width="11.914893617021276" height="10" fill="#264de4" rx="5"/>
+<text x="720" y="226" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2.1%</text>
 </svg>

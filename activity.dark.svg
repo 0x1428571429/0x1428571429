@@ -1,15 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="620" height="178" viewBox="0 0 620 178">
-<rect width="620" height="178" fill="#1a1b2f" rx="12"/>
-<text x="24" y="24" fill="#ff7eb3" font-size="14" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace" font-weight="bold">Activity</text>
-<line x1="24" y1="34" x2="596" y2="34" stroke="#9899b9" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="24" y="48" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">7m</text>
-<text x="104" y="48" fill="#e4e4f0" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">push  0x1428571429/0x1428571429</text>
-<text x="24" y="74" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">10m</text>
-<text x="104" y="74" fill="#e4e4f0" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">push  0x1428571429/0x1428571429</text>
-<text x="24" y="100" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">13m</text>
-<text x="104" y="100" fill="#e4e4f0" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">push  0x1428571429/0x1428571429</text>
-<text x="24" y="126" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">20m</text>
-<text x="104" y="126" fill="#e4e4f0" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">push  0x1428571429/0x1428571429</text>
-<text x="24" y="152" fill="#9899b9" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">21m</text>
-<text x="104" y="152" fill="#e4e4f0" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">push  0x1428571429/0x1428571429</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="226" viewBox="0 0 960 226">
+<rect width="960" height="226" fill="#111111" rx="0"/>
+<text x="28" y="24" fill="#e8e8e8" font-size="13" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">Activity</text>
+<text x="28" y="56" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">10m ago</text>
+<text x="128" y="56" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">pushed to 0x1428571429/0x1428571429</text>
+<text x="28" y="90" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">18m ago</text>
+<text x="128" y="90" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">pushed to 0x1428571429/0x1428571429</text>
+<text x="28" y="124" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">21m ago</text>
+<text x="128" y="124" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">pushed to 0x1428571429/0x1428571429</text>
+<text x="28" y="158" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">23m ago</text>
+<text x="128" y="158" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">pushed to 0x1428571429/0x1428571429</text>
+<text x="28" y="192" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">31m ago</text>
+<text x="128" y="192" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">pushed to 0x1428571429/0x1428571429</text>
 </svg>
