@@ -111,11 +111,11 @@ const LCOL = 155;
 
 function genList(theme, name, file, items) {
   if(!items.length) return;
-  const h = 72+items.length*IH;
+  const h = 82+items.length*IH;
   make(`${file}.${theme}.svg`, theme, h, t => {
-    let o = `<text x="${P}" y="38" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">${name}</text>\n`;
+    let o = `<text x="${P}" y="46" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">${name}</text>\n`;
     items.forEach((item,i)=>{
-      const by=72+i*IH;
+      const by=82+i*IH;
       o+=`<text x="${P}" y="${by}" fill="${t.dim}" font-size="14" font-family="${MONO}">${item.left}</text>\n`;
       o+=`<text x="${P+LCOL}" y="${by}" fill="${t.text}" font-size="14" font-family="${SANS}">${tr(item.right,65)}</text>\n`;
     });

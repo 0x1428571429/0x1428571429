@@ -2,8 +2,8 @@
 <rect width="960" height="128" fill="#111111" rx="6"/>
 <text x="28" y="16" fill="#666666" font-size="10" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">0x1428571429</text>
 <text x="28" y="40" fill="#e8e8e8" font-size="22" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">0x142857</text>
-<text x="28" y="60" fill="#666666" font-size="11" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">You had me at hello.</text>
-<text x="28" y="74" fill="#666666" font-size="10" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">—— Jerry Maguire</text>
+<text x="28" y="60" fill="#666666" font-size="11" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">We're gonna need a bigger boat.</text>
+<text x="28" y="74" fill="#666666" font-size="10" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">—— Jaws</text>
 <line x1="28" y1="92" x2="932" y2="92" stroke="#2a2a2a" stroke-width="1"/>
 <text x="28" y="110" fill="#e8e8e8" font-size="12" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">0</text>
 <text x="68" y="110" fill="#666666" font-size="11" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">stars</text>

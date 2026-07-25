@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="106" viewBox="0 0 960 106">
-<rect width="960" height="106" fill="#f5f5f5" rx="6"/>
-<text x="28" y="38" fill="#2f3437" font-size="28" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">Project</text>
-<text x="28" y="72" fill="#888888" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">★</text>
-<text x="183" y="72" fill="#2f3437" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">time-friend.com</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="116" viewBox="0 0 960 116">
+<rect width="960" height="116" fill="#f5f5f5" rx="6"/>
+<text x="28" y="46" fill="#2f3437" font-size="28" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">Project</text>
+<text x="28" y="82" fill="#888888" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">★</text>
+<text x="183" y="82" fill="#2f3437" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">time-friend.com</text>
 </svg>
