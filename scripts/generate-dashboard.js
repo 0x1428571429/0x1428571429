@@ -5,18 +5,14 @@ const TOKEN = process.env.METRICS_TOKEN || '';
 const USERNAME = '0x1428571429';
 
 const THEMES = {
-  dark: {
-    bg: '#0d1117', card: '#161b22', text: '#c9d1d9', secondary: '#8b949e',
-    accent: '#58a6ff', border: '#30363d',
-  },
-  light: {
-    bg: '#ffffff', card: '#f6f8fa', text: '#24292f', secondary: '#57606a',
-    accent: '#0969da', border: '#d0d7de',
-  },
+  dark: { bg: '#0d1117', card: '#161b22', text: '#c9d1d9', secondary: '#8b949e', accent: '#58a6ff', border: '#30363d' },
+  light: { bg: '#ffffff', card: '#f6f8fa', text: '#24292f', secondary: '#57606a', accent: '#0969da', border: '#d0d7de' },
 };
 
-const FONT = 'Menlo,"Meslo LG","Helvetica Neue",monospace';
+const FONT = "Menlo,'Meslo LG','Helvetica Neue',monospace";
 const FONT_UI = 'system-ui,-apple-system,sans-serif';
+const W = 440;
+const P = 16;
 
 const LOGO = [
   '___________      __    _   __           __',
@@ -25,6 +21,12 @@ const LOGO = [
   '/_/ /_/ |_\\__/\\__/ /_/  \\__/\\__/|_|_/ .__/',
   '                                   /_/',
 ];
+
+const LANG_COLORS = {
+  JavaScript: '#f1e05a', TypeScript: '#3178c6', HTML: '#e34c26', CSS: '#563d7c',
+  Vue: '#4fc08d', Python: '#3572A5', Shell: '#89e051', Dockerfile: '#384d54',
+  'C++': '#f34b7d', Java: '#b07219',
+};
 
 function fetchJSON(url) {
   const opts = { headers: { 'User-Agent': 'dashboard' } };
@@ -56,27 +58,14 @@ function parseRSS(xml) {
     const t = (m[1].match(/<title>(.*?)<\/title>/) || [])[1] || '';
     const l = (m[1].match(/<link>(.*?)<\/link>/) || [])[1] || '';
     const d = (m[1].match(/<pubDate>(.*?)<\/pubDate>/) || [])[1] || '';
-    items.push({
-      title: t.replace(/<!\[CDATA\[|\]\]>/g, ''),
-      link: l,
-      date: d ? new Date(d).toISOString().slice(0, 10) : '',
-    });
+    items.push({ title: t.replace(/<!\[CDATA\[|\]\]>/g, ''), link: l, date: d ? new Date(d).toISOString().slice(0, 10) : '' });
   }
   return items.slice(0, 8);
 }
 
-function esc(s) {
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-
-function trunc(s, n) {
-  return s.length <= n ? s : s.slice(0, n - 1) + '…';
-}
-
-function fmt(n) {
-  return n >= 1000 ? (n / 1000).toFixed(1) + 'k' : String(n);
-}
-
+function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+function trunc(s, n) { return s.length <= n ? s : s.slice(0, n - 1) + '…'; }
+function fmt(n) { return n >= 1000 ? (n / 1000).toFixed(1) + 'k' : String(n); }
 function ago(d) {
   const diff = Date.now() - d.getTime();
   const m = Math.floor(diff / 60000);
@@ -104,174 +93,103 @@ function evDesc(e) {
   }
 }
 
-const LANG_COLORS = {
-  JavaScript: '#f1e05a', TypeScript: '#3178c6', HTML: '#e34c26', CSS: '#563d7c',
-  Vue: '#4fc08d', Python: '#3572A5', Shell: '#89e051', Dockerfile: '#384d54',
-  'C++': '#f34b7d', Java: '#b07219', Rust: '#dea584', Go: '#00ADD8',
-};
+function render(theme, name, w, h, draw) {
+  const t = THEMES[theme];
+  let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" fill="none">\n`;
+  svg += `<rect width="${w}" height="${h}" fill="${t.bg}" rx="6"/>\n`;
+  svg += draw(t);
+  svg += '</svg>';
+  fs.writeFileSync(name, svg);
+}
 
-function generateSVG(data, themeName) {
-  const t = THEMES[themeName];
-  const { user, totalStars, languages, events, blogPosts } = data;
-
-  const W = 920;
-  const PAD = 30;
-  const CW = W - PAD * 2;
-
-  let y = PAD;
-  const out = [];
-
-  // helpers
-  const bg = () => `<rect width="${W}" height="${H}" fill="${t.bg}"/>`;
-  const rect = (x, y, w, h, fill, rx) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill || t.card}" rx="${rx || 6}"/>`;
-  const txt = (x, y, s, c, sz) => `<text x="${x}" y="${y}" fill="${c || t.text}" font-size="${sz || 13}" font-family="${FONT}">${esc(s)}</text>`;
-  const txtUI = (x, y, s, c, sz, fw) => `<text x="${x}" y="${y}" fill="${c || t.text}" font-size="${sz || 13}" font-family="${FONT_UI}"${fw ? ' font-weight="'+fw+'"' : ''}>${esc(s)}</text>`;
-  const ln = (x, y, w) => `<line x1="${x}" y1="${y}" x2="${x + w}" y2="${y}" stroke="${t.border}" stroke-width="1"/>`;
-  const link = (href, content) => `<a href="${esc(href)}" target="_blank">${content}</a>`;
-  const bar = (x, y, w, h, c) => `<rect x="${x}" y="${y}" width="${w || 0}" height="${h}" fill="${c || t.accent}" rx="${h/2}"/>`;
-
-  let H;
-  let totalLines = 0;
-
-  // Estimate total lines for H
-  totalLines += 5; // logo
-  totalLines += 1; // name
-  const blogLines = blogPosts.length || 0;
-  totalLines += blogLines;
-  const langLines = Math.min(Object.keys(languages).length, 7);
-  totalLines += langLines + 4;
-  const eventLines = Math.min(events.length, 6);
-  totalLines += eventLines + 1;
-  H = 400 + totalLines * 32;
-
-  out.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" fill="none">`);
-  out.push(bg());
-
-  // ===== PROFILE HEADER =====
-  (() => {
-    const cx = PAD;
-    const cy = y;
-    const ch = 150;
-    const ri = 8;
-    out.push(rect(cx, cy, CW, ch));
-
-    LOGO.forEach((l, i) => {
-      out.push(txt(cx + 16, cy + 22 + i * 18, l, t.accent, 11));
-    });
+// ===== PROFILE HEADER =====
+function genHeader(theme, user, totalStars) {
+  render(theme, `header.${theme}.svg`, W, 172, t => {
+    let out = '';
+    LOGO.forEach((l, i) => out += `  <text x="${P}" y="${20 + i * 18}" fill="${t.accent}" font-size="11" font-family="${FONT}">${esc(l)}</text>\n`);
 
     const name = user.name || user.login;
-    const bio = user.bio ? trunc(user.bio, 55) : '';
-    out.push(txtUI(cx + 220, cy + 32, name, t.text, 22, 'bold'));
-    if (bio) out.push(txtUI(cx + 220, cy + 54, bio, t.secondary, 13));
-    const meta = 'joined ' + new Date(user.created_at).toISOString().slice(0, 7);
-    out.push(txtUI(cx + 220, cy + 54, '', t.secondary, 12));
-    out.push(txtUI(cx + 220, cy + 74, meta + (user.location ? '  ·  ' + esc(user.location) : ''), t.secondary, 12));
+    const bio = user.bio ? trunc(user.bio.trim().replace(/\s+/g, ' '), 50) : '';
+    out += `  <text x="${P}" y="${116}" fill="${t.text}" font-size="18" font-family="${FONT_UI}" font-weight="bold">${esc(name)}</text>\n`;
+    if (bio) out += `  <text x="${P}" y="${136}" fill="${t.secondary}" font-size="12" font-family="${FONT_UI}">${esc(bio)}</text>\n`;
+
+    const joined = 'joined ' + new Date(user.created_at).toISOString().slice(0, 7);
+    out += `  <text x="${P}" y="${152}" fill="${t.secondary}" font-size="10" font-family="${FONT_UI}">${esc(joined)}${user.location ? ' · ' + esc(user.location) : ''}</text>\n`;
 
     const stats = [
-      ['Stars', fmt(totalStars)],
-      ['Repos', user.public_repos],
-      ['Followers', fmt(user.followers)],
-      ['Following', fmt(user.following)],
+      ['⭐', fmt(totalStars)],
+      ['📦', user.public_repos],
+      ['👥', fmt(user.followers)],
     ];
-    stats.forEach(([label, val], i) => {
-      const sx = cx + 220 + i * 105;
-      out.push(txtUI(sx, cy + 110, val, t.accent, 18, 'bold'));
-      out.push(txtUI(sx, cy + 128, label, t.secondary, 10));
+    const sw = (W - P * 2) / stats.length;
+    stats.forEach(([icon, val], i) => {
+      const sx = P + i * sw + sw / 2;
+      out += `  <text x="${sx}" y="${128}" fill="${t.text}" font-size="13" font-family="${FONT_UI}" font-weight="bold" text-anchor="middle">${icon} ${val}</text>\n`;
     });
+    return out;
+  });
+}
 
-    y += ch + 16;
-  })();
-
-  // ===== BLOG POSTS =====
-  if (blogPosts.length > 0) {
-    const cx = PAD;
-    const cy = y;
-    const itemH = 28;
-    const ch = 52 + blogPosts.length * itemH;
-    out.push(rect(cx, cy, CW, ch));
-    out.push(txtUI(cx + 16, cy + 24, '📝  Latest Blog Posts', t.accent, 15, 'bold'));
-    out.push(ln(cx + 16, cy + 34, CW - 32));
-
-    blogPosts.forEach((post, i) => {
-      const by = cy + 52 + i * itemH;
-      const title = trunc(post.title, 55);
-      out.push(link(post.link,
-        txt(cx + 16, by, '·  ' + title, t.text, 12) +
-        txt(cx + CW - 110, by, post.date, t.secondary, 10)
-      ));
+// ===== BLOG POSTS =====
+function genBlog(theme, posts) {
+  if (!posts.length) return;
+  const itemH = 26;
+  const h = 46 + posts.length * itemH;
+  render(theme, `blog.${theme}.svg`, W, h, t => {
+    let out = `  <text x="${P}" y="${22}" fill="${t.accent}" font-size="13" font-family="${FONT_UI}" font-weight="bold">📝  Latest Blog Posts</text>\n`;
+    out += `  <line x1="${P}" y1="${30}" x2="${W - P}" y2="${30}" stroke="${t.border}" stroke-width="1"/>\n`;
+    posts.forEach((post, i) => {
+      const by = 46 + i * itemH;
+      const title = trunc(post.title, 40);
+      out += `  <a href="${esc(post.link)}" target="_blank">\n`;
+      out += `    <text x="${P}" y="${by}" fill="${t.text}" font-size="11" font-family="${FONT}">·  ${esc(title)}</text>\n`;
+      out += `    <text x="${W - P}" y="${by}" fill="${t.secondary}" font-size="9" font-family="${FONT}" text-anchor="end">${post.date}</text>\n`;
+      out += `  </a>\n`;
     });
+    return out;
+  });
+}
 
-    y += ch + 16;
-  }
-
-  // ===== LANGUAGES + STATS =====
-  (() => {
-    const cx = PAD;
-    const cy = y;
-    const sorted = Object.entries(languages).sort((a, b) => b[1] - a[1]);
-    const total = sorted.reduce((s, [, v]) => s + v, 0);
-    const top = sorted.slice(0, 7);
-    const itemH = 30;
-    const langH = Math.max(top.length * itemH + 16, 140) + 40;
-    const statsH = 140;
-    const ch = Math.max(langH, statsH) + 50;
-
-    out.push(rect(cx, cy, CW, ch));
-    out.push(txtUI(cx + 16, cy + 24, '🈷️  Languages', t.accent, 15, 'bold'));
-    out.push(ln(cx + 16, cy + 34, CW - 32));
-
-    const leftW = 370;
+// ===== LANGUAGES =====
+function genLanguages(theme, languages) {
+  const sorted = Object.entries(languages).sort((a, b) => b[1] - a[1]);
+  const total = sorted.reduce((s, [, v]) => s + v, 0);
+  const top = sorted.slice(0, 7);
+  if (!top.length) return;
+  const itemH = 26;
+  const h = 46 + top.length * itemH;
+  render(theme, `languages.${theme}.svg`, W, h, t => {
+    let out = `  <text x="${P}" y="${22}" fill="${t.accent}" font-size="13" font-family="${FONT_UI}" font-weight="bold">🈷️  Languages</text>\n`;
+    out += `  <line x1="${P}" y1="${30}" x2="${W - P}" y2="${30}" stroke="${t.border}" stroke-width="1"/>\n`;
     top.forEach(([lang, count], i) => {
-      const by = cy + 50 + i * itemH;
+      const by = 46 + i * itemH;
       const pct = total > 0 ? (count / total * 100) : 0;
       const color = LANG_COLORS[lang] || t.accent;
-      const bw = Math.max(20, 180 * pct / 100);
-      out.push(txt(cx + 16, by, lang, t.text, 11));
-      out.push(bar(cx + 130, by - 5, bw, 10, color));
-      out.push(txt(cx + 320, by, pct.toFixed(1) + '%', t.secondary, 10));
+      const bw = Math.max(10, 170 * pct / 100);
+      out += `  <text x="${P}" y="${by}" fill="${t.text}" font-size="10" font-family="${FONT}">${esc(lang)}</text>\n`;
+      out += `  <rect x="110" y="${by - 5}" width="${bw}" height="9" fill="${color}" rx="4.5"/>\n`;
+      out += `  <text x="300" y="${by}" fill="${t.secondary}" font-size="10" font-family="${FONT}">${pct.toFixed(1)}%</text>\n`;
     });
+    return out;
+  });
+}
 
-    out.push(txtUI(cx + leftW + 30, cy + 50, '⚡ GitHub Stats', t.text, 14, 'bold'));
-    const rightStats = [
-      ['Total Stars', fmt(totalStars)],
-      ['Public Repos', user.public_repos],
-      ['Followers', fmt(user.followers)],
-      ['Following', fmt(user.following)],
-    ];
-    rightStats.forEach(([label, val], i) => {
-      const ry = cy + 78 + i * 30;
-      out.push(txtUI(cx + leftW + 30, ry, label, t.secondary, 11));
-      out.push(txtUI(cx + leftW + 30, ry + 14, val, t.text, 14, 'bold'));
-    });
-
-    y += ch + 16;
-  })();
-
-  // ===== RECENT ACTIVITY =====
-  if (events.length > 0) {
-    const cx = PAD;
-    const cy = y;
-    const itemH = 26;
-    const count = Math.min(events.length, 6);
-    const ch = 52 + count * itemH;
-    out.push(rect(cx, cy, CW, ch));
-    out.push(txtUI(cx + 16, cy + 24, '📰  Recent Activity', t.accent, 15, 'bold'));
-    out.push(ln(cx + 16, cy + 34, CW - 32));
-
+// ===== RECENT ACTIVITY =====
+function genActivity(theme, events) {
+  if (!events.length) return;
+  const count = Math.min(events.length, 6);
+  const itemH = 24;
+  const h = 46 + count * itemH;
+  render(theme, `activity.${theme}.svg`, W, h, t => {
+    let out = `  <text x="${P}" y="${22}" fill="${t.accent}" font-size="13" font-family="${FONT_UI}" font-weight="bold">📰  Recent Activity</text>\n`;
+    out += `  <line x1="${P}" y1="${30}" x2="${W - P}" y2="${30}" stroke="${t.border}" stroke-width="1"/>\n`;
     events.slice(0, count).forEach((ev, i) => {
-      const by = cy + 52 + i * itemH;
-      out.push(txt(cx + 16, by, '·  ' + trunc(evDesc(ev), 75), t.text, 11));
-      out.push(txt(cx + CW - 70, by, ago(new Date(ev.created_at)), t.secondary, 10));
+      const by = 46 + i * itemH;
+      out += `  <text x="${P}" y="${by}" fill="${t.text}" font-size="10" font-family="${FONT}">·  ${esc(trunc(evDesc(ev), 50))}</text>\n`;
+      out += `  <text x="${W - P}" y="${by}" fill="${t.secondary}" font-size="9" font-family="${FONT}" text-anchor="end">${ago(new Date(ev.created_at))}</text>\n`;
     });
-
-    y += ch + 16;
-  }
-
-  // ===== FOOTER =====
-  out.push(txtUI(W / 2, H - 30, '✨ Generated by GitHub Actions · Updated daily ✨', t.secondary, 11));
-
-  out.push('</svg>');
-  return out.join('\n');
+    return out;
+  });
 }
 
 async function main() {
@@ -292,11 +210,17 @@ async function main() {
 
   console.log('Generating...');
   for (const theme of ['dark', 'light']) {
-    const svg = generateSVG({ user, totalStars, languages, events: validEvents, blogPosts }, theme);
-    fs.writeFileSync(`dashboard.${theme}.svg`, svg);
-    console.log(`  -> dashboard.${theme}.svg (${svg.length} bytes)`);
+    genHeader(theme, user, totalStars);
+    genBlog(theme, blogPosts);
+    genLanguages(theme, languages);
+    genActivity(theme, validEvents);
   }
-  console.log('Done!');
+
+  console.log('All SVGs generated!');
+  console.log('  header.{dark,light}.svg');
+  console.log('  blog.{dark,light}.svg');
+  console.log('  languages.{dark,light}.svg');
+  console.log('  activity.{dark,light}.svg');
 }
 
 main().catch(e => { console.error(e); process.exit(1); });

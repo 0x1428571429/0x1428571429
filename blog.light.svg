@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="254" viewBox="0 0 440 254" fill="none">
+<rect width="440" height="254" fill="#ffffff" rx="6"/>
+  <text x="16" y="22" fill="#0969da" font-size="13" font-family="system-ui,-apple-system,sans-serif" font-weight="bold">📝  Latest Blog Posts</text>
+  <line x1="16" y1="30" x2="424" y2="30" stroke="#d0d7de" stroke-width="1"/>
+  <a href="https://time-friend.com/en/archive/long-time-no-see/" target="_blank">
+    <text x="16" y="46" fill="#24292f" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">·  Long Time No See</text>
+    <text x="424" y="46" fill="#57606a" font-size="9" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace" text-anchor="end">2024-06-19</text>
+  </a>
+  <a href="https://time-friend.com/en/archive/mac-shortcut-to-minimize-all-applications/" target="_blank">
+    <text x="16" y="72" fill="#24292f" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">·  Mac Shortcut to Minimize All Applicatio…</text>
+    <text x="424" y="72" fill="#57606a" font-size="9" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace" text-anchor="end">2021-03-31</text>
+  </a>
+  <a href="https://time-friend.com/en/archive/2020-year-end-reflections/" target="_blank">
+    <text x="16" y="98" fill="#24292f" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">·  2020 Year-End Reflections</text>
+    <text x="424" y="98" fill="#57606a" font-size="9" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace" text-anchor="end">2021-03-04</text>
+  </a>
+  <a href="https://time-friend.com/en/archive/recommended-order-for-developing-taro-multi-platform-applications/" target="_blank">
+    <text x="16" y="124" fill="#24292f" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">·  Recommended Order for Developing Taro M…</text>
+    <text x="424" y="124" fill="#57606a" font-size="9" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace" text-anchor="end">2020-12-16</text>
+  </a>
+  <a href="https://time-friend.com/en/archive/how-to-optimize-bundle-size-for-quick-apps-developed-with-taro/" target="_blank">
+    <text x="16" y="150" fill="#24292f" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">·  How to Optimize Bundle Size for Quick A…</text>
+    <text x="424" y="150" fill="#57606a" font-size="9" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace" text-anchor="end">2020-12-15</text>
+  </a>
+  <a href="https://time-friend.com/en/archive/what-is-a-tensor-in-tensorflow/" target="_blank">
+    <text x="16" y="176" fill="#24292f" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">·  What is a Tensor in TensorFlow?</text>
+    <text x="424" y="176" fill="#57606a" font-size="9" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace" text-anchor="end">2020-09-18</text>
+  </a>
+  <a href="https://time-friend.com/en/archive/enable-forced-dark-mode-for-chrome-and-edge-on-mac/" target="_blank">
+    <text x="16" y="202" fill="#24292f" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">·  Enable Forced Dark Mode for Chrome and …</text>
+    <text x="424" y="202" fill="#57606a" font-size="9" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace" text-anchor="end">2020-09-17</text>
+  </a>
+  <a href="https://time-friend.com/en/archive/how-to-disable-chrome-cors-restrictions-on-mac/" target="_blank">
+    <text x="16" y="228" fill="#24292f" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">·  How to Disable Chrome CORS Restrictions…</text>
+    <text x="424" y="228" fill="#57606a" font-size="9" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace" text-anchor="end">2020-09-16</text>
+  </a>
+</svg>
