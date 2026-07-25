@@ -106,11 +106,11 @@ function genHeader(theme, u, stars) {
 // === BLOG ===
 function genBlog(theme, posts) {
   if(!posts.length) return;
-    const h = 52+posts.length*IH;
+    const h = 64+posts.length*IH;
   make(`blog.${theme}.svg`, theme, h, t => {
-    let o = `<text x="${P}" y="28" fill="${t.text}" font-size="18" font-family="${SANS}" font-weight="600">Blog</text>\n`;
+    let o = `<text x="${P}" y="32" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">Blog</text>\n`;
     posts.forEach((p,i)=>{
-      const by=52+i*IH;
+      const by=64+i*IH;
       o+=`<a href="${esc(p.link)}" target="_blank">\n`;
       o+=`  <text x="${P}" y="${by}" fill="${t.dim}" font-size="14" font-family="${MONO}">${p.date}</text>\n`;
       o+=`  <text x="${P+150}" y="${by}" fill="${t.text}" font-size="14" font-family="${SANS}">${tr(p.title,65)}</text>\n`;
@@ -142,11 +142,11 @@ function genLanguages(theme, langs) {
 // === ACTIVITY ===
 function genActivity(theme, events) {
   if(!events.length) return;
-  const n=Math.min(events.length,5), h=56+n*IH;
+  const n=Math.min(events.length,5), h=64+n*IH;
   make(`activity.${theme}.svg`, theme, h, t => {
-    let o = `<text x="${P}" y="24" fill="${t.text}" font-size="13" font-family="${SANS}" font-weight="600">Activity</text>\n`;
+    let o = `<text x="${P}" y="32" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">Activity</text>\n`;
     events.slice(0,n).forEach((ev,i)=>{
-      const by=56+i*IH;
+      const by=64+i*IH;
       o+=`<text x="${P}" y="${by}" fill="${t.dim}" font-size="14" font-family="${MONO}">${ago(new Date(ev.created_at))}</text>\n`;
       o+=`<text x="${P+100}" y="${by}" fill="${t.text}" font-size="14" font-family="${SANS}">${tr(evDesc(ev),70)}</text>\n`;
     });
@@ -168,7 +168,7 @@ async function main() {
   const langs = {};
   if(Array.isArray(repos)) repos.forEach(r=>{if(r.language) langs[r.language]=(langs[r.language]||0)+1;});
   const posts = parseRSS(rss);
-  const evs = Array.isArray(events)?events.filter(e=>e.repo):[];
+  const evs = Array.isArray(events)?events.filter(e=>e.repo && e.type==='WatchEvent'):[];
 
   console.log('Generating...');
   for(const theme of['dark','light']){

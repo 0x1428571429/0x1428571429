@@ -8,4 +8,9 @@
   <img src="blog.light.svg" alt="blog" width="100%">
 </picture>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="activity.dark.svg">
+  <img src="activity.light.svg" alt="activity" width="100%">
+</picture>
+
 
