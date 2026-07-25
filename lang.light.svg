@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="218" viewBox="0 0 620 218" fill="none">
+<rect width="620" height="218" fill="#fef6f0" rx="14"/>
+<text x="16" y="24" fill="#ff6b9d" font-size="14" font-family="system-ui,-apple-system,sans-serif" font-weight="bold">🈷️ Languages</text>
+<line x1="16" y1="34" x2="604" y2="34" stroke="#ffe0cc" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="20" y="50" fill="#2d2d44" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">JavaScript</text>
+<rect x="130" y="44" width="232.3404255319149" height="11" fill="#f1e05a" rx="5.5"/>
+<text x="430" y="50" fill="#8a8aa8" font-size="10" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">83.0%</text>
+<text x="20" y="78" fill="#2d2d44" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">HTML</text>
+<rect x="130" y="72" width="23.829787234042552" height="11" fill="#e34c26" rx="5.5"/>
+<text x="430" y="78" fill="#8a8aa8" font-size="10" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">8.5%</text>
+<text x="20" y="106" fill="#2d2d44" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">Rich Text Format</text>
+<rect x="130" y="100" width="10" height="11" fill="#ff6b9d" rx="5.5"/>
+<text x="430" y="106" fill="#8a8aa8" font-size="10" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">2.1%</text>
+<text x="20" y="134" fill="#2d2d44" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">TypeScript</text>
+<rect x="130" y="128" width="10" height="11" fill="#3178c6" rx="5.5"/>
+<text x="430" y="134" fill="#8a8aa8" font-size="10" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">2.1%</text>
+<text x="20" y="162" fill="#2d2d44" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">C++</text>
+<rect x="130" y="156" width="10" height="11" fill="#f34b7d" rx="5.5"/>
+<text x="430" y="162" fill="#8a8aa8" font-size="10" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">2.1%</text>
+<text x="20" y="190" fill="#2d2d44" font-size="11" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">CSS</text>
+<rect x="130" y="184" width="10" height="11" fill="#563d7c" rx="5.5"/>
+<text x="430" y="190" fill="#8a8aa8" font-size="10" font-family="Menlo,'Meslo LG','Helvetica Neue',monospace">2.1%</text>
+</svg>
