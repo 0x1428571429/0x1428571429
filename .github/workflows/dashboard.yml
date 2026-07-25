@@ -1,0 +1,22 @@
+name: Dashboard
+on:
+  schedule: [{cron: "0 6 * * *"}]
+  workflow_dispatch:
+  push:
+    branches: ["master", "main"]
+    paths-ignore: ["dashboard.*.svg"]
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/generate-dashboard.js
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update dashboard SVGs [Skip GitHub Action]"
+          commit_user_name: "dashboard-bot"
+          commit_user_email: "dashboard-bot@users.noreply.github.com"
