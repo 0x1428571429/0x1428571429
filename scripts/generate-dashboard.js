@@ -124,7 +124,7 @@ function genList(theme, name, file, items) {
 }
 
 function genBlog(theme, posts) {
-  genList(theme, '文章', 'blog', posts.map(p=>({left:p.date, right:p.title})));
+  genList(theme, 'Articles', 'blog', posts.map(p=>({left:p.date, right:p.title})));
 }
 
 function genActivity(theme, events) {
@@ -134,7 +134,7 @@ function genActivity(theme, events) {
 function genProjects(theme, repos) {
   const sorted = Array.isArray(repos)&&repos.length ? repos.filter(r=>!r.fork).sort((a,b)=>b.stargazers_count-a.stargazers_count).slice(0,5) : [];
   const items = sorted.length ? sorted.map(r=>({left:fmt(r.stargazers_count||0)+' ★', right:r.name})) : [{left:'★', right:'time-friend.com'}];
-  genList(theme, 'Project', 'project', items);
+  genList(theme, 'Projects', 'project', items);
 }
 
 async function main() {
