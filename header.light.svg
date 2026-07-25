@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="160" viewBox="0 0 960 160">
 <rect width="960" height="160" fill="#f5f5f5" rx="6"/>
-<text x="28" y="18" fill="#888888" font-size="16" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">0x1428571429</text>
-<text x="28" y="46" fill="#2f3437" font-size="24" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">0x142857</text>
-<text x="28" y="70" fill="#888888" font-size="16" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Here's looking at you, kid.</text>
-<text x="28" y="90" fill="#888888" font-size="16" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">—— Casablanca</text>
+<text x="28" y="18" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">0x1428571429</text>
+<text x="28" y="46" fill="#2f3437" font-size="24" font-family="system-ui,-apple-system,sans-serif" font-weight="600">0x142857</text>
+<text x="28" y="70" fill="#888888" font-size="16" font-family="system-ui,-apple-system,sans-serif">Live and let die.</text>
+<text x="28" y="90" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— James Bond</text>
 <line x1="28" y1="112" x2="932" y2="112" stroke="#e8e8e8" stroke-width="1"/>
-<text x="28" y="136" fill="#2f3437" font-size="16" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">0</text>
-<text x="78" y="136" fill="#888888" font-size="16" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">stars</text>
-<text x="208" y="136" fill="#2f3437" font-size="16" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">0</text>
-<text x="258" y="136" fill="#888888" font-size="16" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">repos</text>
-<text x="388" y="136" fill="#2f3437" font-size="16" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">0</text>
-<text x="438" y="136" fill="#888888" font-size="16" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">followers</text>
+<text x="28" y="136" fill="#2f3437" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">69</text>
+<text x="78" y="136" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">stars</text>
+<text x="208" y="136" fill="#2f3437" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">69</text>
+<text x="258" y="136" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">repos</text>
+<text x="388" y="136" fill="#2f3437" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">568</text>
+<text x="438" y="136" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">followers</text>
 </svg>

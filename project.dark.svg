@@ -1,6 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="116" viewBox="0 0 960 116">
-<rect width="960" height="116" fill="#111111" rx="6"/>
-<text x="28" y="46" fill="#e8e8e8" font-size="28" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">Projects</text>
-<text x="28" y="82" fill="#666666" font-size="16" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace" dominant-baseline="central">★ 0</text>
-<text x="183" y="82" fill="#e8e8e8" font-size="16" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" dominant-baseline="central">time-friend.com</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="252" viewBox="0 0 960 252">
+<rect width="960" height="252" fill="#111111" rx="6"/>
+<text x="28" y="46" fill="#e8e8e8" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">Projects</text>
+<text x="28" y="82" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 84</text>
+<text x="183" y="82" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">time-friend.com</text>
+<text x="28" y="116" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 68</text>
+<text x="183" y="116" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">lotus-scaffold-micro-frontend-portal</text>
+<text x="28" y="150" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 64</text>
+<text x="183" y="150" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">microfrontend-base-demo</text>
+<text x="28" y="184" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 38</text>
+<text x="183" y="184" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">microfrontend-submodule-demo</text>
+<text x="28" y="218" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 7</text>
+<text x="183" y="218" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">ng-electron-netease-cloud-music</text>
 </svg>
