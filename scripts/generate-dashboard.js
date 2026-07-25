@@ -84,7 +84,7 @@ function genHeader(theme, u, quote) {
     ['followers', u ? fmt(u.followers||0) : '-'],
   ];
   const hasQuote = quote && quote.en;
-  const h = hasQuote ? 140 : 100;
+  const h = hasQuote ? 128 : 90;
 
   make(`header.${theme}.svg`, theme, h, t => {
     let o = '';
