@@ -30,6 +30,12 @@ function fetchText(url) {
   });
 }
 
+function pickQuote(quotes) {
+  if(!quotes||!quotes.length) return null;
+  const i=Math.floor(Math.random()*quotes.length);
+  return quotes[i];
+}
+
 function parseRSS(x) {
   const r = [];
   const re = /<item>([\s\S]*?)<\/item>/g;
@@ -71,31 +77,33 @@ function make(name, theme, h, draw) {
 }
 
 // === HEADER ===
-function genHeader(theme, u) {
-  const bio = "\u{1F469}\u200D\u{1F4BB}\u{1F469}\u200D\u{1F4BB} 𝑺𝒐 𝑳𝒂 𝑺𝒊 𝑺𝒊 𝑺𝒊 𝑺𝒊 𝑳𝒂 𝑺𝒊 𝑳𝒂 𝑺𝒐 \u{1F469}\u200D\u{1F4BB}\u{1F469}\u200D\u{1F4BB}\n    \u{1F447}\u{1F447}\u{1F447}\u{1F447}\u{1F447}𝑭𝒐𝒍𝒍𝒐𝒘 𝒎𝒆\u{1F447}\u{1F447}\u{1F447}\u{1F447}\u{1F447}";
+function genHeader(theme, u, quote) {
   const meta = (u && u.created_at) ? `joined ${new Date(u.created_at).toISOString().slice(0,7)}${u.location?' \u00b7 '+esc(u.location):''}` : '';
   const stats=[
     ['stars', u ? fmt((u.public_repos||0)) : '-'],
     ['repos', u ? fmt(u.public_repos||0) : '-'],
     ['followers', u ? fmt(u.followers||0) : '-'],
   ];
-  const h = 180;
+  const hasQuote = quote && quote.en;
+  const h = hasQuote ? 220 : 160;
 
   make(`header.${theme}.svg`, theme, h, t => {
     let o = '';
     o += `<text x="${P}" y="30" fill="${t.dim}" font-size="12" font-family="${MONO}">${USER}</text>\n`;
     o += `<text x="${P}" y="62" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">${NAME}</text>\n`;
-    if(bio) {
-      const lines=bio.split('\n');
-      lines.forEach((l,i)=> o+=`<text x="${P}" y="${88+i*20}" fill="${t.dim}" font-size="14" font-family="${SANS}">${esc(l)}</text>\n`);
+    if(hasQuote) {
+      o+=`<text x="${P}" y="88" fill="${t.dim}" font-size="13" font-family="${SANS}">${esc(tr(quote.en,85))}</text>\n`;
+      o+=`<text x="${P}" y="108" fill="${t.dim}" font-size="12" font-family="${MONO}">${esc('—— '+quote.author)}</text>\n`;
     }
-    if(meta) o += `<text x="${P}" y="${88+(bio?bio.split('\n').length:0)*20+4}" fill="${t.dim}" font-size="12" font-family="${MONO}">${meta}</text>\n`;
-    o += `<line x1="${P}" y1="124" x2="${W-P}" y2="124" stroke="${t.border}" stroke-width="1"/>\n`;
+    const lineY = hasQuote ? 132 : 96;
+    const statY = lineY + 28;
+    if(meta) o += `<text x="${P}" y="${lineY-8}" fill="${t.dim}" font-size="12" font-family="${MONO}">${meta}</text>\n`;
+    o += `<line x1="${P}" y1="${lineY}" x2="${W-P}" y2="${lineY}" stroke="${t.border}" stroke-width="1"/>\n`;
 
     stats.forEach(([l,v],i)=>{
       const sx=P+i*160;
-      o+=`<text x="${sx}" y="156" fill="${t.text}" font-size="14" font-family="${MONO}">${v}</text>\n`;
-      o+=`<text x="${sx+50}" y="156" fill="${t.dim}" font-size="13" font-family="${MONO}">${l}</text>\n`;
+      o+=`<text x="${sx}" y="${statY}" fill="${t.text}" font-size="14" font-family="${MONO}">${v}</text>\n`;
+      o+=`<text x="${sx+50}" y="${statY}" fill="${t.dim}" font-size="13" font-family="${MONO}">${l}</text>\n`;
     });
     return o;
   });
@@ -133,15 +141,16 @@ function genActivity(theme, events) {
 
 async function main() {
   console.log('Fetching...');
-  let u, repos, events, rss;
+  let u, repos, events, rss, quotes;
   try {
-    [u, repos, events, rss] = await Promise.all([
+    [u, repos, events, rss, quotes] = await Promise.all([
       fetchJSON(`https://api.github.com/users/${USER}`, TOKEN).catch(()=>null),
       fetchJSON(`https://api.github.com/users/${USER}/repos?per_page=100&sort=updated`, TOKEN).catch(()=>[]),
       fetchJSON(`https://api.github.com/users/${USER}/events?per_page=10`, TOKEN).catch(()=>[]),
       fetchText('https://time-friend.com/en/index.xml').catch(()=>''),
+      fetchJSON('https://time-friend.com/data/quotes.json', '').catch(()=>null),
     ]);
-  } catch(e) { u=null; repos=[]; events=[]; rss=''; }
+  } catch(e) { u=null; repos=[]; events=[]; rss=''; quotes=null; }
 
   console.log('Processing...');
   const stars = Array.isArray(repos)?repos.reduce((s,r)=>s+(r.stargazers_count||0),0):0;
@@ -149,10 +158,11 @@ async function main() {
   if(Array.isArray(repos)) repos.forEach(r=>{if(r.language) langs[r.language]=(langs[r.language]||0)+1;});
   const posts = parseRSS(rss);
   const evs = Array.isArray(events)?events.filter(e=>e.repo && e.type==='WatchEvent'):[];
+  const quote = pickQuote(quotes);
 
   console.log('Generating...');
   for(const theme of['dark','light']){
-    genHeader(theme, u);
+    genHeader(theme, u, quote);
     genBlog(theme, posts);
     genActivity(theme, evs);
     console.log(`  ${theme} done`);
