@@ -1,46 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="404" viewBox="0 0 960 404">
 <rect width="960" height="404" fill="#111111" rx="6"/>
-<a href="https://time-friend.com/en/" target="_blank">
-  <text x="28" y="32" fill="#e8e8e8" font-size="28" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">Blog</text>
-</a>
-<a href="https://time-friend.com/en/archive/long-time-no-see/" target="_blank">
-  <text x="28" y="64" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2024-06-19</text>
-  <text x="178" y="64" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Long Time No See</text>
-</a>
-<a href="https://time-friend.com/en/archive/mac-shortcut-to-minimize-all-applications/" target="_blank">
-  <text x="28" y="98" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2021-03-31</text>
-  <text x="178" y="98" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Mac Shortcut to Minimize All Applications</text>
-</a>
-<a href="https://time-friend.com/en/archive/2020-year-end-reflections/" target="_blank">
-  <text x="28" y="132" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2021-03-04</text>
-  <text x="178" y="132" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">2020 Year-End Reflections</text>
-</a>
-<a href="https://time-friend.com/en/archive/recommended-order-for-developing-taro-multi-platform-applications/" target="_blank">
-  <text x="28" y="166" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2020-12-16</text>
-  <text x="178" y="166" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Recommended Order for Developing Taro Multi-Platform Applications</text>
-</a>
-<a href="https://time-friend.com/en/archive/how-to-optimize-bundle-size-for-quick-apps-developed-with-taro/" target="_blank">
-  <text x="28" y="200" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2020-12-15</text>
-  <text x="178" y="200" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">How to Optimize Bundle Size for Quick Apps Developed with Taro</text>
-</a>
-<a href="https://time-friend.com/en/archive/what-is-a-tensor-in-tensorflow/" target="_blank">
-  <text x="28" y="234" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2020-09-18</text>
-  <text x="178" y="234" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">What is a Tensor in TensorFlow?</text>
-</a>
-<a href="https://time-friend.com/en/archive/enable-forced-dark-mode-for-chrome-and-edge-on-mac/" target="_blank">
-  <text x="28" y="268" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2020-09-17</text>
-  <text x="178" y="268" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Enable Forced Dark Mode for Chrome and Edge on Mac</text>
-</a>
-<a href="https://time-friend.com/en/archive/how-to-disable-chrome-cors-restrictions-on-mac/" target="_blank">
-  <text x="28" y="302" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2020-09-16</text>
-  <text x="178" y="302" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">How to Disable Chrome CORS Restrictions on Mac</text>
-</a>
-<a href="https://time-friend.com/en/archive/math-relationship-between-data-structures-programming-statements-basic-algorithms-and-mathematics/" target="_blank">
-  <text x="28" y="336" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2020-09-15</text>
-  <text x="178" y="336" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Math - Relationship Between Data Structures, Programming Stateme…</text>
-</a>
-<a href="https://time-friend.com/en/archive/math-naive-bayes-classification-algorithm/" target="_blank">
-  <text x="28" y="370" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2020-09-14</text>
-  <text x="178" y="370" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Math - Naive Bayes Classification Algorithm (Notes)</text>
-</a>
+<text x="28" y="32" fill="#e8e8e8" font-size="28" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">Blog</text>
+<text x="28" y="64" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2024-06-19</text>
+<text x="178" y="64" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Long Time No See</text>
+<text x="28" y="98" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2021-03-31</text>
+<text x="178" y="98" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Mac Shortcut to Minimize All Applications</text>
+<text x="28" y="132" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2021-03-04</text>
+<text x="178" y="132" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">2020 Year-End Reflections</text>
+<text x="28" y="166" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2020-12-16</text>
+<text x="178" y="166" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Recommended Order for Developing Taro Multi-Platform Applications</text>
+<text x="28" y="200" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2020-12-15</text>
+<text x="178" y="200" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">How to Optimize Bundle Size for Quick Apps Developed with Taro</text>
+<text x="28" y="234" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2020-09-18</text>
+<text x="178" y="234" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">What is a Tensor in TensorFlow?</text>
+<text x="28" y="268" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2020-09-17</text>
+<text x="178" y="268" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Enable Forced Dark Mode for Chrome and Edge on Mac</text>
+<text x="28" y="302" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2020-09-16</text>
+<text x="178" y="302" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">How to Disable Chrome CORS Restrictions on Mac</text>
+<text x="28" y="336" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2020-09-15</text>
+<text x="178" y="336" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Math - Relationship Between Data Structures, Programming Stateme…</text>
+<text x="28" y="370" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2020-09-14</text>
+<text x="178" y="370" fill="#e8e8e8" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Math - Naive Bayes Classification Algorithm (Notes)</text>
 </svg>
