@@ -72,7 +72,7 @@ function make(name, theme, h, draw) {
 
 // === HEADER ===
 function genHeader(theme, u) {
-  const bio = (u && u.bio) ? tr(u.bio.trim().replace(/\s+/g,' '),55) : '';
+  const bio = "\u{1F469}\u200D\u{1F4BB}\u{1F469}\u200D\u{1F4BB} 𝑺𝒐 𝑳𝒂 𝑺𝒊 𝑺𝒊 𝑺𝒊 𝑺𝒊 𝑳𝒂 𝑺𝒊 𝑳𝒂 𝑺𝒐 \u{1F469}\u200D\u{1F4BB}\u{1F469}\u200D\u{1F4BB}\n    \u{1F447}\u{1F447}\u{1F447}\u{1F447}\u{1F447}𝑭𝒐𝒍𝒍𝒐𝒘 𝒎𝒆\u{1F447}\u{1F447}\u{1F447}\u{1F447}\u{1F447}";
   const meta = (u && u.created_at) ? `joined ${new Date(u.created_at).toISOString().slice(0,7)}${u.location?' \u00b7 '+esc(u.location):''}` : '';
   const stats=[
     ['stars', u ? fmt((u.public_repos||0)) : '-'],
@@ -85,8 +85,11 @@ function genHeader(theme, u) {
     let o = '';
     o += `<text x="${P}" y="30" fill="${t.dim}" font-size="12" font-family="${MONO}">${USER}</text>\n`;
     o += `<text x="${P}" y="62" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">${NAME}</text>\n`;
-    if(bio) o+= `<text x="${P}" y="88" fill="${t.dim}" font-size="14" font-family="${SANS}">${esc(bio)}</text>\n`;
-    if(meta) o += `<text x="${P}" y="108" fill="${t.dim}" font-size="12" font-family="${MONO}">${meta}</text>\n`;
+    if(bio) {
+      const lines=bio.split('\n');
+      lines.forEach((l,i)=> o+=`<text x="${P}" y="${88+i*20}" fill="${t.dim}" font-size="14" font-family="${SANS}">${esc(l)}</text>\n`);
+    }
+    if(meta) o += `<text x="${P}" y="${88+(bio?bio.split('\n').length:0)*20+4}" fill="${t.dim}" font-size="12" font-family="${MONO}">${meta}</text>\n`;
     o += `<line x1="${P}" y1="124" x2="${W-P}" y2="124" stroke="${t.border}" stroke-width="1"/>\n`;
 
     stats.forEach(([l,v],i)=>{

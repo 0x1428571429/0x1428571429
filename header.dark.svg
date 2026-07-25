@@ -2,6 +2,8 @@
 <rect width="960" height="180" fill="#111111" rx="6"/>
 <text x="28" y="30" fill="#666666" font-size="12" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">0x1428571429</text>
 <text x="28" y="62" fill="#e8e8e8" font-size="28" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">0x142857</text>
+<text x="28" y="88" fill="#666666" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">👩‍💻👩‍💻 𝑺𝒐 𝑳𝒂 𝑺𝒊 𝑺𝒊 𝑺𝒊 𝑺𝒊 𝑳𝒂 𝑺𝒊 𝑳𝒂 𝑺𝒐 👩‍💻👩‍💻</text>
+<text x="28" y="108" fill="#666666" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">    👇👇👇👇👇𝑭𝒐𝒍𝒍𝒐𝒘 𝒎𝒆👇👇👇👇👇</text>
 <line x1="28" y1="124" x2="932" y2="124" stroke="#2a2a2a" stroke-width="1"/>
 <text x="28" y="156" fill="#e8e8e8" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">0</text>
 <text x="78" y="156" fill="#666666" font-size="13" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">stars</text>
