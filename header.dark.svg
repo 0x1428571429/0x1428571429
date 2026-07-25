@@ -2,8 +2,8 @@
 <rect width="960" height="160" fill="#111111" rx="6"/>
 <text x="28" y="18" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">0x1428571429</text>
 <text x="28" y="46" fill="#e8e8e8" font-size="24" font-family="system-ui,-apple-system,sans-serif" font-weight="600">0x142857</text>
-<text x="28" y="70" fill="#666666" font-size="16" font-family="system-ui,-apple-system,sans-serif">Live and let die.</text>
-<text x="28" y="90" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— James Bond</text>
+<text x="28" y="70" fill="#666666" font-size="16" font-family="system-ui,-apple-system,sans-serif">As if!</text>
+<text x="28" y="90" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— Clueless</text>
 <line x1="28" y1="112" x2="932" y2="112" stroke="#2a2a2a" stroke-width="1"/>
 <text x="28" y="136" fill="#e8e8e8" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">69</text>
 <text x="78" y="136" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">stars</text>

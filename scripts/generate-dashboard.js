@@ -128,7 +128,8 @@ function genBlog(theme, posts) {
 }
 
 function genActivity(theme, events) {
-  genList(theme, 'Activity', 'activity', events.slice(0,5).map(e=>({left:ago(new Date(e.created_at)), right:evDesc(e)})));
+  const items = events.length ? events.slice(0,5).map(e=>({left:ago(new Date(e.created_at)), right:evDesc(e)})) : [{left:'-', right:'starred repos will appear here'}];
+  genList(theme, 'Activity', 'activity', items);
 }
 
 function genProjects(theme, repos) {
