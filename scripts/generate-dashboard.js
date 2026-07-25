@@ -72,7 +72,7 @@ const LC = {JavaScript:'#f0db4f',TypeScript:'#2f74c0',HTML:'#e44d26',CSS:'#264de
 function make(name, theme, h, draw) {
   const t = C[theme];
   let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${h}" viewBox="0 0 ${W} ${h}">\n`;
-  svg += `<rect width="${W}" height="${h}" fill="${t.bg}" rx="0"/>\n`;
+  svg += `<rect width="${W}" height="${h}" fill="${t.bg}" rx="6"/>\n`;
   svg += draw(t);
   svg += '</svg>';
   fs.writeFileSync(name, svg);

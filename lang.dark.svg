@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="260" viewBox="0 0 960 260">
-<rect width="960" height="260" fill="#111111" rx="0"/>
+<rect width="960" height="260" fill="#111111" rx="6"/>
 <text x="28" y="24" fill="#e8e8e8" font-size="13" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">Languages</text>
 <text x="28" y="56" fill="#666666" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">JavaScript</text>
 <rect x="140" y="50" width="464.6808510638298" height="10" fill="#f0db4f" rx="5"/>
