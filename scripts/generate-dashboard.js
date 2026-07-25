@@ -139,6 +139,21 @@ function genActivity(theme, events) {
   });
 }
 
+function genProjects(theme, repos) {
+  const sorted = Array.isArray(repos) ? repos.filter(r=>!r.fork).sort((a,b)=>b.stargazers_count-a.stargazers_count).slice(0,5) : [];
+  if(!sorted.length) return;
+  const h = 64+sorted.length*IH;
+  make(`project.${theme}.svg`, theme, h, t => {
+    let o = `<text x="${P}" y="32" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">Project</text>\n`;
+    sorted.forEach((r,i)=>{
+      const by=64+i*IH;
+      o+=`<text x="${P}" y="${by}" fill="${t.dim}" font-size="14" font-family="${MONO}">${fmt(r.stargazers_count||0)} ★</text>\n`;
+      o+=`<text x="${P+100}" y="${by}" fill="${t.text}" font-size="14" font-family="${SANS}">${tr(r.name,65)}</text>\n`;
+    });
+    return o;
+  });
+}
+
 async function main() {
   console.log('Fetching...');
   let u, repos, events, rss, quotes;
@@ -165,6 +180,7 @@ async function main() {
     genHeader(theme, u, quote);
     genBlog(theme, posts);
     genActivity(theme, evs);
+    genProjects(theme, repos);
     console.log(`  ${theme} done`);
   }
   console.log('All OK!');
