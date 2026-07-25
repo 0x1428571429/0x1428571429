@@ -78,14 +78,13 @@ function make(name, theme, h, draw) {
 
 // === HEADER ===
 function genHeader(theme, u, quote) {
-  const meta = (u && u.created_at) ? `joined ${new Date(u.created_at).toISOString().slice(0,7)}${u.location?' \u00b7 '+esc(u.location):''}` : '';
   const stats=[
     ['stars', u ? fmt((u.public_repos||0)) : '-'],
     ['repos', u ? fmt(u.public_repos||0) : '-'],
     ['followers', u ? fmt(u.followers||0) : '-'],
   ];
   const hasQuote = quote && quote.en;
-  const h = hasQuote ? 220 : 160;
+  const h = hasQuote ? 200 : 140;
 
   make(`header.${theme}.svg`, theme, h, t => {
     let o = '';
@@ -97,7 +96,6 @@ function genHeader(theme, u, quote) {
     }
     const lineY = hasQuote ? 132 : 96;
     const statY = lineY + 28;
-    if(meta) o += `<text x="${P}" y="${lineY-8}" fill="${t.dim}" font-size="12" font-family="${MONO}">${meta}</text>\n`;
     o += `<line x1="${P}" y1="${lineY}" x2="${W-P}" y2="${lineY}" stroke="${t.border}" stroke-width="1"/>\n`;
 
     stats.forEach(([l,v],i)=>{

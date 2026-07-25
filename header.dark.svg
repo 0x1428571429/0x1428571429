@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="220" viewBox="0 0 960 220">
-<rect width="960" height="220" fill="#111111" rx="6"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="200" viewBox="0 0 960 200">
+<rect width="960" height="200" fill="#111111" rx="6"/>
 <text x="28" y="30" fill="#666666" font-size="12" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">0x1428571429</text>
 <text x="28" y="62" fill="#e8e8e8" font-size="28" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">0x142857</text>
-<text x="28" y="88" fill="#666666" font-size="13" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Don't let yourself get attached to anything you are not willing to walk out on in 30…</text>
-<text x="28" y="108" fill="#666666" font-size="12" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">—— Heat</text>
+<text x="28" y="88" fill="#666666" font-size="13" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">The greatest trick the devil ever pulled was convincing the world he didn't exist.</text>
+<text x="28" y="108" fill="#666666" font-size="12" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">—— The Usual Suspects</text>
 <line x1="28" y1="132" x2="932" y2="132" stroke="#2a2a2a" stroke-width="1"/>
 <text x="28" y="160" fill="#e8e8e8" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">0</text>
 <text x="78" y="160" fill="#666666" font-size="13" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">stars</text>
