@@ -98,3 +98,147 @@ jobs:
           plugin_rss: yes
           plugin_rss_source: https://time-friend.com/en/index.xml
           plugin_rss_limit: 10
+
+      - uses: lowlighter/metrics@latest
+        name: Languages (dark)
+        with:
+          filename: metrics.languages.dark.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: dark
+          plugin_languages: yes
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_limit: 8
+
+      - uses: lowlighter/metrics@latest
+        name: Languages (light)
+        with:
+          filename: metrics.languages.light.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: light
+          plugin_languages: yes
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_limit: 8
+
+      - uses: lowlighter/metrics@latest
+        name: Lines of code (dark)
+        with:
+          filename: metrics.lines.dark.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: dark
+          plugin_lines: yes
+
+      - uses: lowlighter/metrics@latest
+        name: Lines of code (light)
+        with:
+          filename: metrics.lines.light.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: light
+          plugin_lines: yes
+
+      - uses: lowlighter/metrics@latest
+        name: Coding habits (dark)
+        with:
+          filename: metrics.habits.dark.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: dark
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: no
+
+      - uses: lowlighter/metrics@latest
+        name: Coding habits (light)
+        with:
+          filename: metrics.habits.light.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: light
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: no
+
+      - uses: lowlighter/metrics@latest
+        name: Achievements (dark)
+        with:
+          filename: metrics.achievements.dark.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: dark
+          plugin_achievements: yes
+          plugin_achievements_threshold: C
+          plugin_achievements_secrets: yes
+          plugin_achievements_limit: 0
+
+      - uses: lowlighter/metrics@latest
+        name: Achievements (light)
+        with:
+          filename: metrics.achievements.light.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: light
+          plugin_achievements: yes
+          plugin_achievements_threshold: C
+          plugin_achievements_secrets: yes
+          plugin_achievements_limit: 0
+
+      - uses: lowlighter/metrics@latest
+        name: Notable contributions (dark)
+        with:
+          filename: metrics.notable.dark.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: dark
+          plugin_notable: yes
+
+      - uses: lowlighter/metrics@latest
+        name: Notable contributions (light)
+        with:
+          filename: metrics.notable.light.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: light
+          plugin_notable: yes
+
+      - uses: lowlighter/metrics@latest
+        name: Commit calendar (dark)
+        with:
+          filename: metrics.calendar.dark.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: dark
+          plugin_calendar: yes
+          plugin_calendar_limit: 0
+
+      - uses: lowlighter/metrics@latest
+        name: Commit calendar (light)
+        with:
+          filename: metrics.calendar.light.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: light
+          plugin_calendar: yes
+          plugin_calendar_limit: 0
+
+      - uses: lowlighter/metrics@latest
+        name: Featured repositories (dark)
+        with:
+          filename: metrics.repositories.dark.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: dark
+          plugin_repositories: yes
+          plugin_repositories_pinned: yes
+
+      - uses: lowlighter/metrics@latest
+        name: Featured repositories (light)
+        with:
+          filename: metrics.repositories.light.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_skin: light
+          plugin_repositories: yes
+          plugin_repositories_pinned: yes
