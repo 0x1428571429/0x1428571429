@@ -1,18 +1,21 @@
-### 📝 Latest Blog Posts
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="metrics.blog.dark.svg">
-  <img src="metrics.blog.light.svg" alt="Blog Posts">
-</picture>
-
----
-
-### 📅 Isometric Commit Calendar
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="metrics.isocalendar.dark.svg">
-  <img src="metrics.isocalendar.light.svg" alt="Isometric Commit Calendar">
-</picture>
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <h3>📝 Latest Blog Posts</h3>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="metrics.blog.dark.svg">
+        <img src="metrics.blog.light.svg" alt="Blog Posts">
+      </picture>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <h3>📅 Isometric Commit Calendar</h3>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="metrics.isocalendar.dark.svg">
+        <img src="metrics.isocalendar.light.svg" alt="Isometric Commit Calendar">
+      </picture>
+    </td>
+  </tr>
+</table>
 
 ---
 
