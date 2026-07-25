@@ -1,14 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="160" viewBox="0 0 960 160">
-<rect width="960" height="160" fill="#f5f5f5" rx="6"/>
-<text x="28" y="18" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">0x1428571429</text>
-<text x="28" y="46" fill="#2f3437" font-size="24" font-family="system-ui,-apple-system,sans-serif" font-weight="600">0x142857</text>
-<text x="28" y="70" fill="#888888" font-size="16" font-family="system-ui,-apple-system,sans-serif">As if!</text>
-<text x="28" y="90" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— Clueless</text>
-<line x1="28" y1="112" x2="932" y2="112" stroke="#e8e8e8" stroke-width="1"/>
-<text x="28" y="136" fill="#2f3437" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">69</text>
-<text x="78" y="136" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">stars</text>
-<text x="208" y="136" fill="#2f3437" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">69</text>
-<text x="258" y="136" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">repos</text>
-<text x="388" y="136" fill="#2f3437" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">568</text>
-<text x="438" y="136" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">followers</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="140" viewBox="0 0 960 140">
+<rect width="960" height="140" fill="#f5f5f5" rx="6"/>
+<text x="28" y="36" fill="#2f3437" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">There is no place like 127.0.0.1</text>
+<text x="28" y="64" fill="#888888" font-size="16" font-family="system-ui,-apple-system,sans-serif">Don't let yourself get attached to anything you are not willing to walk ou…</text>
+<text x="28" y="84" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— Heat</text>
+<line x1="28" y1="108" x2="932" y2="108" stroke="#e8e8e8" stroke-width="1"/>
+<text x="28" y="132" fill="#2f3437" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">340</text>
+<text x="78" y="132" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">stars</text>
+<text x="208" y="132" fill="#2f3437" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">69</text>
+<text x="258" y="132" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">repos</text>
+<text x="388" y="132" fill="#2f3437" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">568</text>
+<text x="438" y="132" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">followers</text>
 </svg>

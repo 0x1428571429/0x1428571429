@@ -77,24 +77,23 @@ function make(name, theme, h, draw) {
 }
 
 // === HEADER ===
-function genHeader(theme, u, quote) {
+function genHeader(theme, u, quote, totalStars) {
   const stats=[
-    ['stars', u ? fmt((u.public_repos||0)) : '-'],
+    ['stars', u ? fmt(totalStars||0) : '-'],
     ['repos', u ? fmt(u.public_repos||0) : '-'],
     ['followers', u ? fmt(u.followers||0) : '-'],
   ];
   const hasQuote = quote && quote.en;
-  const h = hasQuote ? 160 : 120;
+  const h = hasQuote ? 140 : 100;
 
   make(`header.${theme}.svg`, theme, h, t => {
     let o = '';
-    o += `<text x="${P}" y="18" fill="${t.dim}" font-size="16" font-family="${MONO}">${USER}</text>\n`;
-    o += `<text x="${P}" y="46" fill="${t.text}" font-size="24" font-family="${SANS}" font-weight="600">${NAME}</text>\n`;
+    o += `<text x="${P}" y="36" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">There is no place like 127.0.0.1</text>\n`;
     if(hasQuote) {
-      o+=`<text x="${P}" y="70" fill="${t.dim}" font-size="16" font-family="${SANS}">${esc(tr(quote.en,75))}</text>\n`;
-      o+=`<text x="${P}" y="90" fill="${t.dim}" font-size="16" font-family="${MONO}">${esc('—— '+quote.author)}</text>\n`;
+      o+=`<text x="${P}" y="64" fill="${t.dim}" font-size="16" font-family="${SANS}">${esc(tr(quote.en,75))}</text>\n`;
+      o+=`<text x="${P}" y="84" fill="${t.dim}" font-size="16" font-family="${MONO}">${esc('—— '+quote.author)}</text>\n`;
     }
-    const lineY = hasQuote ? 112 : 80;
+    const lineY = hasQuote ? 108 : 72;
     const statY = lineY + 24;
     o += `<line x1="${P}" y1="${lineY}" x2="${W-P}" y2="${lineY}" stroke="${t.border}" stroke-width="1"/>\n`;
 
@@ -161,7 +160,7 @@ async function main() {
 
   console.log('Generating...');
   for(const theme of['dark','light']){
-    genHeader(theme, u, quote);
+    genHeader(theme, u, quote, stars);
     genBlog(theme, posts);
     genActivity(theme, evs);
     genProjects(theme, repos);
