@@ -124,7 +124,7 @@ function genList(theme, name, file, items) {
 }
 
 function genBlog(theme, posts) {
-  genList(theme, 'Blog', 'blog', posts.map(p=>({left:p.date, right:p.title})));
+  genList(theme, '文章', 'blog', posts.map(p=>({left:p.date, right:p.title})));
 }
 
 function genActivity(theme, events) {
