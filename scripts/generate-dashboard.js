@@ -107,50 +107,34 @@ function genHeader(theme, u, quote) {
   });
 }
 
-// === BLOG ===
-function genBlog(theme, posts) {
-  if(!posts.length) return;
-    const h = 64+posts.length*IH;
-  make(`blog.${theme}.svg`, theme, h, t => {
-    let o = `<text x="${P}" y="32" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">Blog</text>\n`;
-    posts.forEach((p,i)=>{
+const LCOL = 155;
+
+function genList(theme, name, file, items) {
+  if(!items.length) return;
+  const h = 64+items.length*IH;
+  make(`${file}.${theme}.svg`, theme, h, t => {
+    let o = `<text x="${P}" y="32" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">${name}</text>\n`;
+    items.forEach((item,i)=>{
       const by=64+i*IH;
-      o+=`<text x="${P}" y="${by}" fill="${t.dim}" font-size="14" font-family="${MONO}">${p.date}</text>\n`;
-      o+=`<text x="${P+150}" y="${by}" fill="${t.text}" font-size="14" font-family="${SANS}">${tr(p.title,65)}</text>\n`;
+      o+=`<text x="${P}" y="${by}" fill="${t.dim}" font-size="14" font-family="${MONO}">${item.left}</text>\n`;
+      o+=`<text x="${P+LCOL}" y="${by}" fill="${t.text}" font-size="14" font-family="${SANS}">${tr(item.right,65)}</text>\n`;
     });
     return o;
   });
 }
 
-// === ACTIVITY ===
+function genBlog(theme, posts) {
+  genList(theme, 'Blog', 'blog', posts.map(p=>({left:p.date, right:p.title})));
+}
+
 function genActivity(theme, events) {
-  if(!events.length) return;
-  const n=Math.min(events.length,5), h=64+n*IH;
-  make(`activity.${theme}.svg`, theme, h, t => {
-    let o = `<text x="${P}" y="32" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">Activity</text>\n`;
-    events.slice(0,n).forEach((ev,i)=>{
-      const by=64+i*IH;
-      o+=`<text x="${P}" y="${by}" fill="${t.dim}" font-size="14" font-family="${MONO}">${ago(new Date(ev.created_at))}</text>\n`;
-      o+=`<text x="${P+100}" y="${by}" fill="${t.text}" font-size="14" font-family="${SANS}">${tr(evDesc(ev),70)}</text>\n`;
-    });
-    return o;
-  });
+  genList(theme, 'Activity', 'activity', events.slice(0,5).map(e=>({left:ago(new Date(e.created_at)), right:evDesc(e)})));
 }
 
 function genProjects(theme, repos) {
-  const sorted = Array.isArray(repos) && repos.length ? repos.filter(r=>!r.fork).sort((a,b)=>b.stargazers_count-a.stargazers_count).slice(0,5) : [];
-  const items = sorted.length ? sorted.map(r=>({name:r.name,stars:r.stargazers_count||0})) : [{name:'time-friend.com',stars:0},{name:'0x1428571429',stars:0}];
-  if(!items.length) return;
-  const h = 64+items.length*IH;
-  make(`project.${theme}.svg`, theme, h, t => {
-    let o = `<text x="${P}" y="32" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">Project</text>\n`;
-    items.forEach((r,i)=>{
-      const by=64+i*IH;
-      o+=`<text x="${P}" y="${by}" fill="${t.dim}" font-size="14" font-family="${MONO}">${fmt(r.stars)} ★</text>\n`;
-      o+=`<text x="${P+100}" y="${by}" fill="${t.text}" font-size="14" font-family="${SANS}">${tr(r.name,65)}</text>\n`;
-    });
-    return o;
-  });
+  const sorted = Array.isArray(repos)&&repos.length ? repos.filter(r=>!r.fork).sort((a,b)=>b.stargazers_count-a.stargazers_count).slice(0,5) : [];
+  const items = sorted.length ? sorted.map(r=>({left:fmt(r.stargazers_count||0)+' ★', right:r.name})) : [{left:'★', right:'time-friend.com'}];
+  genList(theme, 'Project', 'project', items);
 }
 
 async function main() {

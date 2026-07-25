@@ -2,8 +2,8 @@
 <rect width="960" height="200" fill="#f5f5f5" rx="6"/>
 <text x="28" y="30" fill="#888888" font-size="12" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">0x1428571429</text>
 <text x="28" y="62" fill="#2f3437" font-size="28" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">0x142857</text>
-<text x="28" y="88" fill="#888888" font-size="13" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">All the world's a stage, and all the men and women merely players.</text>
-<text x="28" y="108" fill="#888888" font-size="12" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">—— Shakespeare in Love</text>
+<text x="28" y="88" fill="#888888" font-size="13" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">The first rule of Fight Club is: You do not talk about Fight Club.</text>
+<text x="28" y="108" fill="#888888" font-size="12" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">—— Fight Club</text>
 <line x1="28" y1="132" x2="932" y2="132" stroke="#e8e8e8" stroke-width="1"/>
 <text x="28" y="160" fill="#2f3437" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">0</text>
 <text x="78" y="160" fill="#888888" font-size="13" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">stars</text>
