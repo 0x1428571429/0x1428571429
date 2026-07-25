@@ -84,24 +84,24 @@ function genHeader(theme, u, quote) {
     ['followers', u ? fmt(u.followers||0) : '-'],
   ];
   const hasQuote = quote && quote.en;
-  const h = hasQuote ? 128 : 90;
+  const h = hasQuote ? 160 : 120;
 
   make(`header.${theme}.svg`, theme, h, t => {
     let o = '';
-    o += `<text x="${P}" y="16" fill="${t.dim}" font-size="10" font-family="${MONO}">${USER}</text>\n`;
-    o += `<text x="${P}" y="40" fill="${t.text}" font-size="22" font-family="${SANS}" font-weight="600">${NAME}</text>\n`;
+    o += `<text x="${P}" y="18" fill="${t.dim}" font-size="16" font-family="${MONO}">${USER}</text>\n`;
+    o += `<text x="${P}" y="46" fill="${t.text}" font-size="24" font-family="${SANS}" font-weight="600">${NAME}</text>\n`;
     if(hasQuote) {
-      o+=`<text x="${P}" y="60" fill="${t.dim}" font-size="11" font-family="${SANS}">${esc(tr(quote.en,85))}</text>\n`;
-      o+=`<text x="${P}" y="74" fill="${t.dim}" font-size="10" font-family="${MONO}">${esc('—— '+quote.author)}</text>\n`;
+      o+=`<text x="${P}" y="70" fill="${t.dim}" font-size="16" font-family="${SANS}">${esc(tr(quote.en,75))}</text>\n`;
+      o+=`<text x="${P}" y="90" fill="${t.dim}" font-size="16" font-family="${MONO}">${esc('—— '+quote.author)}</text>\n`;
     }
-    const lineY = hasQuote ? 92 : 68;
-    const statY = lineY + 18;
+    const lineY = hasQuote ? 112 : 80;
+    const statY = lineY + 24;
     o += `<line x1="${P}" y1="${lineY}" x2="${W-P}" y2="${lineY}" stroke="${t.border}" stroke-width="1"/>\n`;
 
     stats.forEach(([l,v],i)=>{
-      const sx=P+i*160;
-      o+=`<text x="${sx}" y="${statY}" fill="${t.text}" font-size="12" font-family="${MONO}">${v}</text>\n`;
-      o+=`<text x="${sx+40}" y="${statY}" fill="${t.dim}" font-size="11" font-family="${MONO}">${l}</text>\n`;
+      const sx=P+i*180;
+      o+=`<text x="${sx}" y="${statY}" fill="${t.text}" font-size="16" font-family="${MONO}">${v}</text>\n`;
+      o+=`<text x="${sx+50}" y="${statY}" fill="${t.dim}" font-size="16" font-family="${MONO}">${l}</text>\n`;
     });
     return o;
   });
@@ -116,8 +116,8 @@ function genList(theme, name, file, items) {
     let o = `<text x="${P}" y="46" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">${name}</text>\n`;
     items.forEach((item,i)=>{
       const by=82+i*IH;
-      o+=`<text x="${P}" y="${by}" fill="${t.dim}" font-size="14" font-family="${MONO}">${item.left}</text>\n`;
-      o+=`<text x="${P+LCOL}" y="${by}" fill="${t.text}" font-size="14" font-family="${SANS}">${tr(item.right,65)}</text>\n`;
+      o+=`<text x="${P}" y="${by}" fill="${t.dim}" font-size="16" font-family="${MONO}" dominant-baseline="central">${item.left}</text>\n`;
+      o+=`<text x="${P+LCOL}" y="${by}" fill="${t.text}" font-size="16" font-family="${SANS}" dominant-baseline="central">${tr(item.right,55)}</text>\n`;
     });
     return o;
   });
@@ -133,7 +133,7 @@ function genActivity(theme, events) {
 
 function genProjects(theme, repos) {
   const sorted = Array.isArray(repos)&&repos.length ? repos.filter(r=>!r.fork).sort((a,b)=>b.stargazers_count-a.stargazers_count).slice(0,5) : [];
-  const items = sorted.length ? sorted.map(r=>({left:fmt(r.stargazers_count||0)+' ★', right:r.name})) : [{left:'★', right:'time-friend.com'}];
+  const items = sorted.length ? sorted.map(r=>({left:'★ '+fmt(r.stargazers_count||0), right:r.name})) : [{left:'★ 0', right:'time-friend.com'}];
   genList(theme, 'Projects', 'project', items);
 }
 
