@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="404" viewBox="0 0 960 404">
 <rect width="960" height="404" fill="#f7f6f3" rx="6"/>
-<text x="28" y="32" fill="#2f3437" font-size="28" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">Blog</text>
+<a href="https://time-friend.com/en/" target="_blank">
+  <text x="28" y="32" fill="#2f3437" font-size="28" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif" font-weight="600">Blog</text>
+</a>
 <a href="https://time-friend.com/en/archive/long-time-no-see/" target="_blank">
   <text x="28" y="64" fill="#888888" font-size="14" font-family="'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace">2024-06-19</text>
   <text x="178" y="64" fill="#2f3437" font-size="14" font-family="'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif">Long Time No See</text>

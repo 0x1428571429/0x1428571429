@@ -82,7 +82,7 @@ function make(name, theme, h, draw) {
 function genHeader(theme, u, stars) {
   const name = u.name||u.login;
   const bio = u.bio?tr(u.bio.trim().replace(/\s+/g,' '),55):'';
-  const meta = `joined ${new Date(u.created_at).toISOString().slice(0,7)}${u.location?' \u00b7 '+esc(u.location):''}`;
+  const meta = u.created_at ? `joined ${new Date(u.created_at).toISOString().slice(0,7)}${u.location?' \u00b7 '+esc(u.location):''}` : '';
   const stats=[['stars',fmt(stars)],['repos',u.public_repos],['followers',fmt(u.followers)]];
   const h = 180;
 
@@ -108,7 +108,7 @@ function genBlog(theme, posts) {
   if(!posts.length) return;
     const h = 64+posts.length*IH;
   make(`blog.${theme}.svg`, theme, h, t => {
-    let o = `<text x="${P}" y="32" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">Blog</text>\n`;
+    let o = `<a href="https://time-friend.com/en/" target="_blank">\n  <text x="${P}" y="32" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">Blog</text>\n</a>\n`;
     posts.forEach((p,i)=>{
       const by=64+i*IH;
       o+=`<a href="${esc(p.link)}" target="_blank">\n`;
@@ -146,9 +146,11 @@ function genActivity(theme, events) {
   make(`activity.${theme}.svg`, theme, h, t => {
     let o = `<text x="${P}" y="32" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">Activity</text>\n`;
     events.slice(0,n).forEach((ev,i)=>{
-      const by=64+i*IH;
-      o+=`<text x="${P}" y="${by}" fill="${t.dim}" font-size="14" font-family="${MONO}">${ago(new Date(ev.created_at))}</text>\n`;
-      o+=`<text x="${P+100}" y="${by}" fill="${t.text}" font-size="14" font-family="${SANS}">${tr(evDesc(ev),70)}</text>\n`;
+      const by=64+i*IH, repo=ev.repo.name;
+      o+=`<a href="https://github.com/${esc(repo)}" target="_blank">\n`;
+      o+=`  <text x="${P}" y="${by}" fill="${t.dim}" font-size="14" font-family="${MONO}">${ago(new Date(ev.created_at))}</text>\n`;
+      o+=`  <text x="${P+100}" y="${by}" fill="${t.text}" font-size="14" font-family="${SANS}">${tr(evDesc(ev),70)}</text>\n`;
+      o+=`</a>\n`;
     });
     return o;
   });
