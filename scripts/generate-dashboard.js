@@ -7,7 +7,7 @@ const NAME = '0x142857';
 
 const C = {
   dark: { bg: '#111111', text: '#e8e8e8', dim: '#666666', border: '#2a2a2a' },
-  light: { bg: '#f7f6f3', text: '#2f3437', dim: '#888888', border: '#e8e8e8' },
+  light: { bg: '#f5f5f5', text: '#2f3437', dim: '#888888', border: '#e8e8e8' },
 };
 
 const MONO = "'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace";
