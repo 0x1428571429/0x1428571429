@@ -10,8 +10,8 @@ const C = {
   light: { bg: '#f5f5f5', text: '#2f3437', dim: '#888888', border: '#e8e8e8' },
 };
 
-const MONO = "'Geist Mono','SF Mono','JetBrains Mono',Menlo,monospace";
-const SANS = "'SF Pro Display','Geist Sans','Helvetica Neue',system-ui,sans-serif";
+const MONO = "ui-monospace,Menlo,Consolas,monospace";
+const SANS = "system-ui,-apple-system,sans-serif";
 const W = 960;
 const P = 28;
 const IH = 34;
