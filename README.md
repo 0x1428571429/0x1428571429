@@ -1,13 +1,13 @@
-<table>
+<table style="border: none;">
   <tr>
-    <td width="50%" align="center" valign="top">
+    <td width="50%" align="center" valign="top" style="border: none;">
       <h3>📝 Latest Blog Posts</h3>
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="metrics.blog.dark.svg">
         <img src="metrics.blog.light.svg" alt="Blog Posts">
       </picture>
     </td>
-    <td width="50%" align="center" valign="top">
+    <td width="50%" align="center" valign="top" style="border: none;">
       <h3>📅 Isometric Commit Calendar</h3>
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="metrics.isocalendar.dark.svg">
@@ -28,16 +28,16 @@
 
 ---
 
-<table>
+<table style="border: none;">
   <tr>
-    <td width="50%" align="center" valign="top">
+    <td width="50%" align="center" valign="top" style="border: none;">
       <h3>🏆 Achievements</h3>
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="metrics.achievements.dark.svg">
         <img src="metrics.achievements.light.svg" alt="Achievements">
       </picture>
     </td>
-    <td width="50%" align="center" valign="top">
+    <td width="50%" align="center" valign="top" style="border: none;">
       <h3>🎩 Notable Contributions</h3>
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="metrics.notable.dark.svg">
@@ -46,14 +46,14 @@
     </td>
   </tr>
   <tr>
-    <td width="50%" align="center" valign="top">
+    <td width="50%" align="center" valign="top" style="border: none;">
       <h3>👨‍💻 Lines of Code</h3>
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="metrics.lines.dark.svg">
         <img src="metrics.lines.light.svg" alt="Lines of Code">
       </picture>
     </td>
-    <td width="50%" align="center" valign="top">
+    <td width="50%" align="center" valign="top" style="border: none;">
       <h3>💡 Coding Habits</h3>
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="metrics.habits.dark.svg">
@@ -62,14 +62,14 @@
     </td>
   </tr>
   <tr>
-    <td width="50%" align="center" valign="top">
+    <td width="50%" align="center" valign="top" style="border: none;">
       <h3>⭐ Starred Topics</h3>
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="metrics.topics.dark.svg">
         <img src="metrics.topics.light.svg" alt="Starred Topics">
       </picture>
     </td>
-    <td width="50%" align="center" valign="top">
+    <td width="50%" align="center" valign="top" style="border: none;">
       <h3>📆 Commit Calendar</h3>
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="metrics.calendar.dark.svg">
@@ -78,14 +78,14 @@
     </td>
   </tr>
   <tr>
-    <td width="50%" align="center" valign="top">
+    <td width="50%" align="center" valign="top" style="border: none;">
       <h3>📰 Recent Activity</h3>
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="metrics.activity.dark.svg">
         <img src="metrics.activity.light.svg" alt="Recent Activity">
       </picture>
     </td>
-    <td width="50%" align="center" valign="top">
+    <td width="50%" align="center" valign="top" style="border: none;">
       <h3>📓 Featured Repositories</h3>
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="metrics.repositories.dark.svg">
