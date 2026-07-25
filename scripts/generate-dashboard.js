@@ -138,14 +138,15 @@ function genActivity(theme, events) {
 }
 
 function genProjects(theme, repos) {
-  const sorted = Array.isArray(repos) ? repos.filter(r=>!r.fork).sort((a,b)=>b.stargazers_count-a.stargazers_count).slice(0,5) : [];
-  if(!sorted.length) return;
-  const h = 64+sorted.length*IH;
+  const sorted = Array.isArray(repos) && repos.length ? repos.filter(r=>!r.fork).sort((a,b)=>b.stargazers_count-a.stargazers_count).slice(0,5) : [];
+  const items = sorted.length ? sorted.map(r=>({name:r.name,stars:r.stargazers_count||0})) : [{name:'time-friend.com',stars:0},{name:'0x1428571429',stars:0}];
+  if(!items.length) return;
+  const h = 64+items.length*IH;
   make(`project.${theme}.svg`, theme, h, t => {
     let o = `<text x="${P}" y="32" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">Project</text>\n`;
-    sorted.forEach((r,i)=>{
+    items.forEach((r,i)=>{
       const by=64+i*IH;
-      o+=`<text x="${P}" y="${by}" fill="${t.dim}" font-size="14" font-family="${MONO}">${fmt(r.stargazers_count||0)} ★</text>\n`;
+      o+=`<text x="${P}" y="${by}" fill="${t.dim}" font-size="14" font-family="${MONO}">${fmt(r.stars)} ★</text>\n`;
       o+=`<text x="${P+100}" y="${by}" fill="${t.text}" font-size="14" font-family="${SANS}">${tr(r.name,65)}</text>\n`;
     });
     return o;
