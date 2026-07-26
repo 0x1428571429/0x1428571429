@@ -62,7 +62,7 @@ function ago(d) {
 
 function evDesc(e) {
   const r=(e.repo?.name)||'';
-  return 'starred '+r;
+  return 'Starred '+r;
 }
 
 const LC = {JavaScript:'#f0db4f',TypeScript:'#2f74c0',HTML:'#e44d26',CSS:'#264de4',Vue:'#41b883',Python:'#3572A5',Shell:'#666666','C++':'#004482'};
@@ -100,7 +100,7 @@ function genHeader(theme, u, quote, totalStars) {
     stats.forEach(([l,v],i)=>{
       const sx=P+i*180;
       o+=`<text x="${sx}" y="${statY}" fill="${t.text}" font-size="16" font-family="${MONO}">${v}</text>\n`;
-      o+=`<text x="${sx+50}" y="${statY}" fill="${t.dim}" font-size="16" font-family="${MONO}">${l}</text>\n`;
+      o+=`<text x="${sx+35}" y="${statY}" fill="${t.dim}" font-size="16" font-family="${MONO}">${l}</text>\n`;
     });
     return o;
   });
@@ -127,7 +127,7 @@ function genBlog(theme, posts) {
 }
 
 function genActivity(theme, events) {
-  const items = events.length ? events.slice(0,5).map(e=>({left:ago(new Date(e.created_at)), right:evDesc(e)})) : [{left:'-', right:'starred repos will appear here'}];
+  const items = events.length ? events.slice(0,5).map(e=>({left:ago(new Date(e.created_at)), right:evDesc(e)})) : [{left:'-', right:'Starred repos will appear here'}];
   genList(theme, 'Activity', 'activity', items);
 }
 

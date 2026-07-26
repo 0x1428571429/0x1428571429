@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="165" viewBox="0 0 960 165">
 <rect width="960" height="165" fill="#f5f5f5" rx="6"/>
 <text x="28" y="42" fill="#2f3437" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">There is no place like 127.0.0.1</text>
-<text x="28" y="76" fill="#888888" font-size="16" font-family="system-ui,-apple-system,sans-serif">I love you 3000.</text>
-<text x="28" y="98" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— Avengers: Endgame</text>
+<text x="28" y="76" fill="#888888" font-size="16" font-family="system-ui,-apple-system,sans-serif">May the Force be with you.</text>
+<text x="28" y="98" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— Star Wars</text>
 <line x1="28" y1="124" x2="932" y2="124" stroke="#e8e8e8" stroke-width="1"/>
-<text x="28" y="148" fill="#2f3437" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">340</text>
-<text x="78" y="148" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">stars</text>
+<text x="28" y="148" fill="#2f3437" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">257</text>
+<text x="63" y="148" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">stars</text>
 <text x="208" y="148" fill="#2f3437" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">69</text>
-<text x="258" y="148" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">repos</text>
+<text x="243" y="148" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">repos</text>
 <text x="388" y="148" fill="#2f3437" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">568</text>
-<text x="438" y="148" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">followers</text>
+<text x="423" y="148" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">followers</text>
 </svg>
