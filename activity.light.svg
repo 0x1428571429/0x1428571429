@@ -1,12 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="218" viewBox="0 0 960 218">
-<rect width="960" height="218" fill="#f5f5f5" rx="6"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="150" viewBox="0 0 960 150">
+<rect width="960" height="150" fill="#f5f5f5" rx="6"/>
 <text x="28" y="46" fill="#2f3437" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">Activity</text>
-<text x="28" y="82" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">21h ago</text>
+<text x="28" y="82" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">1d ago</text>
 <text x="183" y="82" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Starred 0x1428571429/English-for-Software-Product-Deve…</text>
 <text x="28" y="116" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">1d ago</text>
 <text x="183" y="116" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Starred frappe/books</text>
-<text x="28" y="150" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">1d ago</text>
-<text x="183" y="150" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Starred shanraisshan/claude-code-best-practice</text>
-<text x="28" y="184" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">1d ago</text>
-<text x="183" y="184" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Starred uheartbeast/youtube-tutorials</text>
 </svg>
