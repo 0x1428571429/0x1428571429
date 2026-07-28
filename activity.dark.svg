@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="150" viewBox="0 0 960 150">
 <rect width="960" height="150" fill="#111111" rx="6"/>
 <text x="28" y="46" fill="#e8e8e8" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">Activity</text>
-<text x="28" y="82" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">1d ago</text>
+<text x="28" y="82" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2d ago</text>
 <text x="183" y="82" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Starred 0x1428571429/English-for-Software-Product-Deve…</text>
-<text x="28" y="116" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">1d ago</text>
+<text x="28" y="116" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2d ago</text>
 <text x="183" y="116" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Starred frappe/books</text>
 </svg>
