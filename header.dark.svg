@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="165" viewBox="0 0 960 165">
 <rect width="960" height="165" fill="#111111" rx="6"/>
 <text x="28" y="42" fill="#e8e8e8" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">There is no place like 127.0.0.1</text>
-<text x="28" y="76" fill="#666666" font-size="16" font-family="system-ui,-apple-system,sans-serif">What we think, we become.</text>
-<text x="28" y="98" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— Buddha</text>
+<text x="28" y="76" fill="#666666" font-size="16" font-family="system-ui,-apple-system,sans-serif">It's not a bug — it's an undocumented feature.</text>
+<text x="28" y="98" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— Anonymous</text>
 <line x1="28" y1="124" x2="932" y2="124" stroke="#2a2a2a" stroke-width="1"/>
 <text x="28" y="148" fill="#e8e8e8" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">4</text>
 <text x="63" y="148" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">stars</text>
