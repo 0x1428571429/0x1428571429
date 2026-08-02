@@ -1,24 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="422" viewBox="0 0 960 422">
 <rect width="960" height="422" fill="#f5f5f5" rx="6"/>
 <text x="28" y="46" fill="#2f3437" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">Articles</text>
-<text x="28" y="82" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-27</text>
-<text x="183" y="82" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Audit Your Coding Habits with /insights</text>
-<text x="28" y="116" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-04-18</text>
-<text x="183" y="116" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">From Terminal to Team: When Agent Workflows Outgrow On…</text>
-<text x="28" y="150" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-04-03</text>
-<text x="183" y="150" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Reviewing Agent Code Is Different from Reviewing Human…</text>
-<text x="28" y="184" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-03-22</text>
-<text x="183" y="184" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Five Tasks You Shouldn't Give Your Agent</text>
-<text x="28" y="218" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-03-14</text>
-<text x="183" y="218" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Agent and Assistant Are Not the Same Thing</text>
-<text x="28" y="252" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-03-06</text>
-<text x="183" y="252" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Claude Gets Dumber After 50 Rounds</text>
-<text x="28" y="286" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-02-19</text>
-<text x="183" y="286" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">What I Put in My CLAUDE.md</text>
-<text x="28" y="320" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-02-05</text>
-<text x="183" y="320" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Would You Merge Code an Agent Wrote Alone</text>
-<text x="28" y="354" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-01-22</text>
-<text x="183" y="354" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Writing Prompts That Land on the First Try</text>
-<text x="28" y="388" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-01-08</text>
-<text x="183" y="388" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Keeping Your Agent on Track with Plan → Code</text>
+<text x="28" y="82" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-08-20</text>
+<text x="183" y="82" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">How a Cardano Hard Fork Works</text>
+<text x="28" y="116" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-08-10</text>
+<text x="183" y="116" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Slow Is Fast: Why Cardano's Governance Is So Careful</text>
+<text x="28" y="150" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-08-01</text>
+<text x="183" y="150" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">The BIP-39 Passphrase: An Extra Layer of Protection fo…</text>
+<text x="28" y="184" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-28</text>
+<text x="183" y="184" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Ethereum Is Excellent — but Cardano's Approach Is More…</text>
+<text x="28" y="218" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-27</text>
+<text x="183" y="218" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Auditing My Coding Habits with /insights</text>
+<text x="28" y="252" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-06-28</text>
+<text x="183" y="252" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Cardano's Biggest Upgrade Yet, Leios: 100x Throughput …</text>
+<text x="28" y="286" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-06-27</text>
+<text x="183" y="286" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">The Cardano SecondFi Signing Incident: How One On-Chai…</text>
+<text x="28" y="320" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-04-18</text>
+<text x="183" y="320" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">From Terminal to Team: When Agent Workflows Outgrow On…</text>
+<text x="28" y="354" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-04-03</text>
+<text x="183" y="354" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Reviewing Agent Code Is Different from Reviewing Human…</text>
+<text x="28" y="388" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-03-22</text>
+<text x="183" y="388" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Five Tasks I Won't Give My Agent</text>
 </svg>
