@@ -1,14 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="252" viewBox="0 0 960 252">
-<rect width="960" height="252" fill="#111111" rx="6"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="116" viewBox="0 0 960 116">
+<rect width="960" height="116" fill="#111111" rx="6"/>
 <text x="28" y="46" fill="#e8e8e8" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">Activity</text>
-<text x="28" y="82" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">18m ago</text>
-<text x="183" y="82" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Starred 0x1428571429/English-for-Software-Product-Deve…</text>
-<text x="28" y="116" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">4h ago</text>
-<text x="183" y="116" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Starred frappe/books</text>
-<text x="28" y="150" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">4h ago</text>
-<text x="183" y="150" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Starred shanraisshan/claude-code-best-practice</text>
-<text x="28" y="184" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">4h ago</text>
-<text x="183" y="184" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Starred uheartbeast/youtube-tutorials</text>
-<text x="28" y="218" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">11h ago</text>
-<text x="183" y="218" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Starred anomalyco/opencode</text>
+<text x="28" y="82" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">-</text>
+<text x="183" y="82" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Starred repos will appear here</text>
 </svg>

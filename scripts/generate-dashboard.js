@@ -15,6 +15,9 @@ const SANS = "system-ui,-apple-system,sans-serif";
 const W = 960;
 const P = 28;
 const IH = 34;
+const LH = 21;
+const TITLE_MAX = 88;
+const TITLE_LINES = 2;
 
 function fetchJSON(url, tok) {
   const o = { headers: { 'User-Agent': 'gen' } };
@@ -50,6 +53,33 @@ function parseRSS(x) {
 
 function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function tr(s, n) { if(!s) return '-'; return s.length <= n ? s : s.slice(0,n-1)+'…'; }
+function wrap(s, maxW, maxLines) {
+  if (!s) return ['-'];
+  const cw = c => c.charCodeAt(0) > 0x2e80 ? 2 : 1;
+  const width = t => [...t].reduce((a,c)=>a+cw(c),0);
+  const words = String(s).trim().split(/\s+/);
+  const lines = [];
+  let cur = '', remaining = false;
+  for (let wi = 0; wi < words.length; wi++) {
+    let piece = words[wi];
+    while (width(piece) > maxW) {
+      if (cur) { if (lines.length < maxLines) lines.push(cur); cur = ''; }
+      let part = '', w = 0, i = 0;
+      for (const c of piece) { const x = cw(c); if (w + x > maxW) break; part += c; w += x; i++; }
+      if (lines.length < maxLines) lines.push(part);
+      piece = piece.slice(i);
+    }
+    if (!piece) continue;
+    if (lines.length >= maxLines) { remaining = true; break; }
+    const cand = cur ? cur + ' ' + piece : piece;
+    if (width(cand) <= maxW) cur = cand;
+    else { if (lines.length < maxLines) lines.push(cur); cur = piece; }
+    if (lines.length >= maxLines) { if (wi < words.length - 1) remaining = true; break; }
+  }
+  if (cur) { if (lines.length < maxLines) lines.push(cur); else remaining = true; }
+  if (remaining && lines.length) lines[lines.length-1] += '…';
+  return lines;
+}
 function fmt(n) { if(n==null||isNaN(n)) return '-'; return n>=1000?(n/1000).toFixed(1)+'k':String(n); }
 function ago(d) {
   try {
@@ -110,13 +140,17 @@ const LCOL = 155;
 
 function genList(theme, name, file, items) {
   if(!items.length) return;
-  const h = 82+items.length*IH;
+  const rows = items.map(it => ({ left: it.left, lines: wrap(it.right, TITLE_MAX, TITLE_LINES) }));
+  const h = 82 + rows.reduce((s,r)=>s+IH+(r.lines.length-1)*LH, 0);
   make(`${file}.${theme}.svg`, theme, h, t => {
     let o = `<text x="${P}" y="46" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">${name}</text>\n`;
-    items.forEach((item,i)=>{
-      const by=82+i*IH;
-      o+=`<text x="${P}" y="${by}" fill="${t.dim}" font-size="16" font-family="${MONO}" dominant-baseline="central">${item.left}</text>\n`;
-      o+=`<text x="${P+LCOL}" y="${by}" fill="${t.text}" font-size="16" font-family="${SANS}" dominant-baseline="central">${tr(item.right,55)}</text>\n`;
+    let by = 82;
+    rows.forEach(r=>{
+      o+=`<text x="${P}" y="${by}" fill="${t.dim}" font-size="16" font-family="${MONO}" dominant-baseline="central">${esc(r.left)}</text>\n`;
+      r.lines.forEach((ln,li)=>{
+        o+=`<text x="${P+LCOL}" y="${by+li*LH}" fill="${t.text}" font-size="16" font-family="${SANS}" dominant-baseline="central">${esc(ln)}</text>\n`;
+      });
+      by += IH + (r.lines.length-1)*LH;
     });
     return o;
   });
@@ -169,4 +203,5 @@ async function main() {
   console.log('All OK!');
 }
 
-main().catch(e=>{console.error(e);process.exit(1);});
+if (require.main === module) main().catch(e=>{console.error(e);process.exit(1);});
+module.exports = { wrap };

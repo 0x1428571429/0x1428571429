@@ -1,24 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="422" viewBox="0 0 960 422">
-<rect width="960" height="422" fill="#f5f5f5" rx="6"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="443" viewBox="0 0 960 443">
+<rect width="960" height="443" fill="#f5f5f5" rx="6"/>
 <text x="28" y="46" fill="#2f3437" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">Articles</text>
-<text x="28" y="82" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2025-08-12</text>
-<text x="183" y="82" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Blog Architecture Series: Homepage Typing Effect</text>
-<text x="28" y="116" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2025-07-08</text>
-<text x="183" y="116" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Blog Architecture Series: PWA &amp; Service Worker</text>
-<text x="28" y="150" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2025-06-15</text>
-<text x="183" y="150" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Blog Architecture Series: Page Analytics</text>
-<text x="28" y="184" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2025-05-06</text>
-<text x="183" y="184" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Blog Architecture Series: Giscus Comment System</text>
-<text x="28" y="218" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2025-04-10</text>
-<text x="183" y="218" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Blog Architecture Series: Deployment</text>
-<text x="28" y="252" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2025-03-25</text>
-<text x="183" y="252" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Blog Architecture Series: Google SEO</text>
-<text x="28" y="286" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2025-03-05</text>
-<text x="183" y="286" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Blog Architecture Series: Build Pipeline</text>
-<text x="28" y="320" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2025-02-15</text>
-<text x="183" y="320" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Blog Architecture Series: Theme Customization</text>
-<text x="28" y="354" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2025-01-20</text>
-<text x="183" y="354" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Blog Architecture Series: i18n Internationalization</text>
-<text x="28" y="388" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2025-01-10</text>
-<text x="183" y="388" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Blog Architecture Series: Overview</text>
+<text x="28" y="82" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-09-01</text>
+<text x="183" y="82" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">How Fees Work on Midnight: DUST Explained Against TRON's Energy</text>
+<text x="28" y="116" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-08-30</text>
+<text x="183" y="116" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">From the '1 TPS' Joke to 'Unlimited Scaling': What Cardano Actually Changed</text>
+<text x="28" y="150" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-08-29</text>
+<text x="183" y="150" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Cardano Roadmap in Review: From Chang Governance to Dijkstra's Three Steps</text>
+<text x="28" y="184" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-08-20</text>
+<text x="183" y="184" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">How a Cardano Hard Fork Works</text>
+<text x="28" y="218" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-08-10</text>
+<text x="183" y="218" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Slow Is Fast: Why Cardano's Governance Is So Careful</text>
+<text x="28" y="252" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-08-01</text>
+<text x="183" y="252" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">The BIP-39 Passphrase: An Extra Layer of Protection for Your Seed Phrase</text>
+<text x="28" y="286" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-28</text>
+<text x="183" y="286" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Ethereum Is Excellent — but Cardano's Approach Is More Advanced</text>
+<text x="28" y="320" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-27</text>
+<text x="183" y="320" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Auditing My Coding Habits with /insights</text>
+<text x="28" y="354" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-06-28</text>
+<text x="183" y="354" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Cardano's Biggest Upgrade Yet, Leios: 100x Throughput Without Weaker Security</text>
+<text x="28" y="388" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-06-27</text>
+<text x="183" y="388" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">The Cardano SecondFi Signing Incident: How One On-Chain Transaction Leaked Ed25519</text>
+<text x="183" y="409" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Private Keys</text>
 </svg>
