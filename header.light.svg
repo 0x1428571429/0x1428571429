@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="165" viewBox="0 0 960 165">
 <rect width="960" height="165" fill="#f5f5f5" rx="6"/>
 <text x="28" y="42" fill="#2f3437" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">There is no place like 127.0.0.1</text>
-<text x="28" y="76" fill="#888888" font-size="16" font-family="system-ui,-apple-system,sans-serif">Great developers solve problems they were unqualified for.</text>
-<text x="28" y="98" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— Patrick McKenzie</text>
+<text x="28" y="76" fill="#888888" font-size="16" font-family="system-ui,-apple-system,sans-serif">The most dangerous phrase: &quot;We've always done it this way.&quot;</text>
+<text x="28" y="98" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— Grace Hopper</text>
 <line x1="28" y1="124" x2="932" y2="124" stroke="#e8e8e8" stroke-width="1"/>
 <text x="28" y="148" fill="#2f3437" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">4</text>
 <text x="63" y="148" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">stars</text>
