@@ -9,8 +9,8 @@
 <text x="28" y="171" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-09-16</text>
 <text x="183" y="171" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Extracting Switch Saves from an emuMMC Image: Non-Standard AES-XTS, FAT32 and DISF</text>
 <text x="28" y="205" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-09-08</text>
-<text x="183" y="205" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Automating Handheld Game Covers: Generating Square Icons, Transparent Logos and Hero</text>
-<text x="183" y="226" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Banners with the SteamGridDB API</text>
+<text x="183" y="205" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Media Data Management for a Handheld Launcher: SteamGridDB Covers, Image Specs and</text>
+<text x="183" y="226" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Metadata Sources</text>
 <text x="28" y="260" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-09-05</text>
 <text x="183" y="260" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Eden Resets Its Config After Every Crash: The Non-Atomic Write in Its C++ Source</text>
 <text x="28" y="294" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-09-02</text>
