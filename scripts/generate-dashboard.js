@@ -4,6 +4,7 @@ const https = require('https');
 const TOKEN = process.env.METRICS_TOKEN || '';
 const USER = '0x1428571429';
 const NAME = '0x142857';
+const STAR_LIMIT = 10;
 
 const C = {
   dark: { bg: '#111111', text: '#e8e8e8', dim: '#666666', border: '#2a2a2a' },
@@ -19,8 +20,8 @@ const LH = 21;
 const TITLE_MAX = 88;
 const TITLE_LINES = 2;
 
-function fetchJSON(url, tok) {
-  const o = { headers: { 'User-Agent': 'gen' } };
+function fetchJSON(url, tok, extra) {
+  const o = { headers: { 'User-Agent': 'gen', ...(extra||{}) } };
   if (tok) o.headers['Authorization'] = `Bearer ${tok}`;
   return new Promise((res, rej) => {
     https.get(url, o, r => { let d = ''; r.on('data', c => d += c); r.on('end', () => { try { res(JSON.parse(d)); } catch(e) { rej(e); } }); }).on('error', rej);
@@ -31,6 +32,25 @@ function fetchText(url) {
   return new Promise((res, rej) => {
     https.get(url, { headers: { 'User-Agent': 'gen' } }, r => { let d = ''; r.on('data', c => d += c); r.on('end', () => res(d)); }).on('error', rej);
   });
+}
+
+async function fetchRecentStars(tok) {
+  const out = [];
+  for (let page = 1; page <= 5 && out.length < STAR_LIMIT; page++) {
+    const items = await fetchJSON(
+      `https://api.github.com/users/${USER}/starred?sort=created&direction=desc&per_page=100&page=${page}`,
+      tok,
+      { 'Accept': 'application/vnd.github.star+json' }
+    ).catch(()=>[]);
+    if (!Array.isArray(items) || !items.length) break;
+    for (const it of items) {
+      if (!it.starred_at) continue;
+      out.push({ at: it.starred_at, repo: it.repo || it });
+      if (out.length >= STAR_LIMIT) break;
+    }
+    if (items.length < 100) break;
+  }
+  return out;
 }
 
 function pickQuote(quotes) {
@@ -90,9 +110,8 @@ function ago(d) {
   } catch(e) { return '-'; }
 }
 
-function evDesc(e) {
-  const r=(e.repo?.name)||'';
-  return 'Starred '+r;
+function evDesc(s) {
+  return (s.repo?.full_name)||(s.repo?.name)||'';
 }
 
 const LC = {JavaScript:'#f0db4f',TypeScript:'#2f74c0',HTML:'#e44d26',CSS:'#264de4',Vue:'#41b883',Python:'#3572A5',Shell:'#666666','C++':'#004482'};
@@ -160,9 +179,9 @@ function genBlog(theme, posts) {
   genList(theme, 'Articles', 'blog', posts.map(p=>({left:p.date, right:p.title})));
 }
 
-function genActivity(theme, events) {
-  const items = events.length ? events.slice(0,5).map(e=>({left:ago(new Date(e.created_at)), right:evDesc(e)})) : [{left:'-', right:'Starred repos will appear here'}];
-  genList(theme, 'Activity', 'activity', items);
+function genActivity(theme, stars) {
+  const items = stars.length ? stars.slice(0,STAR_LIMIT).map(s=>({left:ago(new Date(s.at)), right:evDesc(s)})) : [{left:'-', right:'Starred repos will appear here'}];
+  genList(theme, 'Recent Stars', 'activity', items);
 }
 
 function genProjects(theme, repos) {
@@ -175,13 +194,13 @@ async function main() {
   console.log('Fetching...');
   let u, repos, events, rss, quotes;
   try {
-    [u, repos, events, rss, quotes] = await Promise.all([
+    [u, repos, rss, quotes] = await Promise.all([
       fetchJSON(`https://api.github.com/users/${USER}`, TOKEN).catch(()=>null),
       fetchJSON(`https://api.github.com/users/${USER}/repos?per_page=100&sort=updated`, TOKEN).catch(()=>[]),
-      fetchJSON(`https://api.github.com/users/${USER}/events?per_page=10`, TOKEN).catch(()=>[]),
       fetchText('https://time-friend.com/en/index.xml').catch(()=>''),
       fetchJSON('https://time-friend.com/data/quotes.json', '').catch(()=>null),
     ]);
+    events = await fetchRecentStars(TOKEN).catch(()=>[]);
   } catch(e) { u=null; repos=[]; events=[]; rss=''; quotes=null; }
 
   console.log('Processing...');
@@ -189,7 +208,7 @@ async function main() {
   const langs = {};
   if(Array.isArray(repos)) repos.forEach(r=>{if(r.language) langs[r.language]=(langs[r.language]||0)+1;});
   const posts = parseRSS(rss);
-  const evs = Array.isArray(events)?events.filter(e=>e.repo && e.type==='WatchEvent'):[];
+  const evs = Array.isArray(events)?events:[];
   const quote = pickQuote(quotes);
 
   console.log('Generating...');
