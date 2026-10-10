@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="422" viewBox="0 0 960 422">
 <rect width="960" height="422" fill="#111111" rx="6"/>
 <text x="28" y="46" fill="#e8e8e8" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">Recent Stars</text>
-<text x="28" y="82" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">4d ago</text>
+<text x="28" y="82" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">5d ago</text>
 <text x="183" y="82" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Droid-Deck/DroidDeck</text>
 <text x="28" y="116" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-29</text>
 <text x="183" y="116" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">iisu-network/iiSU</text>
@@ -17,8 +17,8 @@
 <text x="183" y="286" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">anomalyco/opencode</text>
 <text x="28" y="320" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-16</text>
 <text x="183" y="320" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">foxihd/hugo-brewm</text>
-<text x="28" y="354" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-06-12</text>
-<text x="183" y="354" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">iuroc/bilidown</text>
-<text x="28" y="388" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-06-06</text>
-<text x="183" y="388" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">AIEraDev/Clypra</text>
+<text x="28" y="354" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-06-06</text>
+<text x="183" y="354" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">AIEraDev/Clypra</text>
+<text x="28" y="388" fill="#666666" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-04-15</text>
+<text x="183" y="388" fill="#e8e8e8" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">liuzhao1225/YouDub-webui</text>
 </svg>
