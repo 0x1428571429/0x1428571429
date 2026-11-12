@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="165" viewBox="0 0 960 165">
 <path d="M0 165V6A6 6 0 0 1 6 0H954A6 6 0 0 1 960 6V165Z" fill="#dcedf5"/>
 <text x="28" y="42" fill="#1f2122" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">There is no place like 127.0.0.1</text>
-<text x="28" y="76" fill="#61686c" font-size="16" font-family="system-ui,-apple-system,sans-serif">The only way to do great work is to love what you do.</text>
-<text x="28" y="98" fill="#61686c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— Steve Jobs</text>
+<text x="28" y="76" fill="#61686c" font-size="16" font-family="system-ui,-apple-system,sans-serif">The big money is in waiting, not buying or selling.</text>
+<text x="28" y="98" fill="#61686c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— Charlie Munger</text>
 <line x1="28" y1="124" x2="540" y2="124" stroke="#c2d1d8" stroke-width="1"/>
 <clipPath id="mc"><rect x="560" y="0" width="400" height="165"/></clipPath>
 <g clip-path="url(#mc)"><style>
