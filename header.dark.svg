@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="165" viewBox="0 0 960 165">
 <path d="M0 165V6A6 6 0 0 1 6 0H954A6 6 0 0 1 960 6V165Z" fill="#14203a"/>
 <text x="28" y="42" fill="#ecedef" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">There is no place like 127.0.0.1</text>
-<text x="28" y="76" fill="#a0a5b0" font-size="16" font-family="system-ui,-apple-system,sans-serif">How many programmers to change a bulb? None, that's har…</text>
-<text x="28" y="98" fill="#a0a5b0" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— Anonymous</text>
+<text x="28" y="76" fill="#a0a5b0" font-size="16" font-family="system-ui,-apple-system,sans-serif">The best way to predict the future is to create it.</text>
+<text x="28" y="98" fill="#a0a5b0" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace">—— Peter Drucker</text>
 <line x1="28" y1="124" x2="540" y2="124" stroke="#3a445a" stroke-width="1"/>
 <clipPath id="mc"><rect x="560" y="0" width="400" height="165"/></clipPath>
 <g clip-path="url(#mc)"><style>
