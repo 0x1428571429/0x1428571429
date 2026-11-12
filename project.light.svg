@@ -1,10 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="184" viewBox="0 0 960 184">
-<rect width="960" height="184" fill="#f5f5f5" rx="6"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="218" viewBox="0 0 960 218">
+<rect width="960" height="218" fill="#f5f5f5" rx="6"/>
 <text x="28" y="46" fill="#2f3437" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">Projects</text>
 <text x="28" y="82" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 2</text>
 <text x="183" y="82" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">0x1428571429</text>
 <text x="28" y="116" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 1</text>
 <text x="183" y="116" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">English-for-Software-Product-Development</text>
 <text x="28" y="150" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 0</text>
-<text x="183" y="150" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Hackintosh-MSI-Z490-Godlike</text>
+<text x="183" y="150" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">rushi-guan</text>
+<text x="28" y="184" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 0</text>
+<text x="183" y="184" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Hackintosh-MSI-Z490-Godlike</text>
 </svg>
