@@ -1,5 +1,23 @@
 const fs = require('fs');
 const https = require('https');
+const MASCOTS = Object.assign({}, require('./mascots').DESIGNS, require('./cyber').DESIGNS);
+
+const FESTIVALS = require('./festivals');
+const ORDINARY = ['hacker', 'neon', 'drone', 'octo', 'cat', ...FESTIVALS.CHARS.map(k => 'char:' + k)]; // 'char:<k>' = plain greeting by character <k>
+
+// Festival mascot on festival days, otherwise rotate ordinary mascots daily (UTC+8).
+// Override for testing: MASCOT=<design> or MASCOT=fest-<festival> (e.g. fest-diwali).
+function pickMascot(now = new Date()) {
+  const env = process.env.MASCOT;
+  if (env && MASCOTS[env]) return theme => MASCOTS[env](theme);
+  if (env && env.startsWith('fest-') && FESTIVALS.DRAW[env.slice(5)]) return theme => FESTIVALS.DRAW[env.slice(5)](theme, { night: 3 });
+  if (env && env.startsWith('char:') && FESTIVALS.CHARS.includes(env.slice(5))) return theme => FESTIVALS.hello(theme, env.slice(5));
+  const f = FESTIVALS.pick(now);
+  if (f) return f.draw;
+  const day = Math.floor((now.getTime() + 8 * 3600e3) / 86400000);
+  const name = ORDINARY[day % ORDINARY.length];
+  return name.startsWith('char:') ? theme => FESTIVALS.hello(theme, name.slice(5)) : theme => MASCOTS[name](theme);
+}
 
 const TOKEN = process.env.METRICS_TOKEN || '';
 const USER = '0x1428571429';
@@ -217,10 +235,11 @@ async function main() {
     genBlog(theme, posts);
     genActivity(theme, evs);
     genProjects(theme, repos);
+    fs.writeFileSync(`mascot.${theme}.svg`, pickMascot()(theme));
     console.log(`  ${theme} done`);
   }
   console.log('All OK!');
 }
 
 if (require.main === module) main().catch(e=>{console.error(e);process.exit(1);});
-module.exports = { wrap };
+module.exports = { wrap, pickMascot };
