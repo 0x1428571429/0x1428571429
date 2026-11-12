@@ -75,5 +75,5 @@ const CH = {
     eyes: [4, ['......K...K......', '.......KKK.......']], happy: [4, ['.....K.K.K.K.....', '......KKKKK......']],
     arm: { col: 14, idx: 8, ch: 'r' }, hat: 4, holdDy: 2 }),
 };
-Object.assign(CH, require('./botw').CH); // tall Breath-of-the-Wild style sprites
+Object.assign(CH, require('./pix').CH); // pixel-art Breath-of-the-Wild characters (rasterised from vec.js via pixelize.js)
 module.exports = { CH };

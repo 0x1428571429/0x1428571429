@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="218" viewBox="0 0 960 218">
-<path d="M0 0H960V212A6 6 0 0 1 954 218H6A6 6 0 0 1 0 212Z" fill="#0d2433"/>
-<line x1="28" y1="0.5" x2="932" y2="0.5" stroke="#344754" stroke-width="1"/>
+<path d="M0 0H960V212A6 6 0 0 1 954 218H6A6 6 0 0 1 0 212Z" fill="#14203a"/>
+<line x1="28" y1="0.5" x2="932" y2="0.5" stroke="#3a445a" stroke-width="1"/>
 <text x="28" y="46" fill="#ecedef" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">Projects</text>
-<text x="28" y="82" fill="#9ea7ad" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 2</text>
+<text x="28" y="82" fill="#a0a5b0" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 2</text>
 <text x="183" y="82" fill="#ecedef" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">0x1428571429</text>
-<text x="28" y="116" fill="#9ea7ad" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 1</text>
+<text x="28" y="116" fill="#a0a5b0" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 1</text>
 <text x="183" y="116" fill="#ecedef" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">English-for-Software-Product-Development</text>
-<text x="28" y="150" fill="#9ea7ad" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 0</text>
+<text x="28" y="150" fill="#a0a5b0" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 0</text>
 <text x="183" y="150" fill="#ecedef" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">rushi-guan</text>
-<text x="28" y="184" fill="#9ea7ad" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 0</text>
+<text x="28" y="184" fill="#a0a5b0" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 0</text>
 <text x="183" y="184" fill="#ecedef" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Hackintosh-MSI-Z490-Godlike</text>
 </svg>
