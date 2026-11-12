@@ -53,6 +53,10 @@ const FX_CSS = `
 .gw rect{animation:flick .9s step-end infinite}
 @keyframes flick{0%{fill:#ffd23f}34%{fill:#ffb703}67%{fill:#ffe066}}
 .bd{animation-iteration-count:infinite;animation-timing-function:step-end}
+.tw{animation:twk 1.6s ease-in-out infinite}@keyframes twk{0%,100%{opacity:.3}50%{opacity:1}}
+.hb{animation:hbFly 9s linear infinite}@keyframes hbFly{0%{transform:translateX(-40px)}100%{transform:translateX(440px)}}
+.hA{animation:hAB .5s step-end infinite}.hB{animation:hBA .5s step-end infinite}@keyframes hAB{0%{opacity:1}50%{opacity:0}}@keyframes hBA{0%{opacity:0}50%{opacity:1}}
+.gh{animation:ghost 6s ease-in-out infinite}@keyframes ghost{0%,100%{transform:translate(0,0);opacity:.55}50%{transform:translate(8px,-10px);opacity:.9}}
 ` + [...Array(16)].map((_, i) => {
   const ang = (i % 8) * 45 + (i >= 8 ? 22.5 : 0) , rad = i >= 8 ? 22 : 38, dx = Math.round(rad * Math.cos(ang * Math.PI / 180)), dy = Math.round(rad * Math.sin(ang * Math.PI / 180));
   return `.b${i}{animation-name:b${i}}@keyframes b${i}{0%{transform:translate(0,0);opacity:1;animation-timing-function:steps(6,end)}35%{transform:translate(${dx}px,${dy}px);opacity:0}100%{transform:translate(${dx}px,${dy}px);opacity:0}}`;
@@ -102,6 +106,7 @@ const HATS = {
   kufi: ['................', '.....WWWWWW.....', '....WWGGGGWW....'],
   pilgrim: ['.....KKKKKK.....', '.....KKYYKK.....', '...KKKKKKKKKK...'],
   kippah: ['................', '................', '.....ZZZZZZ.....'],
+  witch: ['.......KK.......', '.....KKKKKK.....', '..KKKKPPPPKKKK..'],
 };
 const HELD = { // drawn left of the robot's left arm (cols < 0)
   envelope: sprite(['RRR', 'RYR', 'RRR', 'RRR'], 4, -3),
@@ -109,13 +114,14 @@ const HELD = { // drawn left of the robot's left arm (cols < 0)
   gift: sprite(['.Y.Y.', 'RRYRR', 'RRYRR', 'RRYRR'], 4, -5),
   mooncake: sprite(['.ccc.', 'cQQQc', 'cQQQc', '.ccc.'], 4, -5),
   basket: sprite(['.PBY.', 'NNNNN', '.NNN.'], 5, -5),
+  pumpkin: sprite(['..N..', 'QQQQQ', 'QYQYQ', '.QQQ.'], 4, -5),
   fanous: sprite(['..Y..', '.RRR.', 'RYYYR', 'RYYYR', '.RRR.'], 3, -5),
 };
 
 const { CH } = require('./characters');
-const CHARS = Object.keys(CH).filter(k => !CH[k].hd); // HD-2D sprites have no hat/held anchors
+const CHARS = Object.keys(CH).filter(k => CH[k].hd); // the six Breath-of-the-Wild pixel characters wear the festival costumes
 // each festival has its own fixed character (round-robin over the character list)
-const charFor = id => CH[CHARS[Object.keys(FEST).indexOf(id) % CHARS.length]];
+const charFor = id => CH[id === 'halloween' ? 'revali' : CHARS[Object.keys(FEST).indexOf(id) % CHARS.length]];
 
 const FEST = {
   hello: { text: 'Hello, world!', bg: null, fx: () => '' },
@@ -142,6 +148,8 @@ const FEST = {
     fx: () => drift('fl', 26, ['#f08a24', '#c2620f', '#facc15', '#ef5b6b'], 6, 30, 930, 31, 6, 11) },
   christmas: { text: 'Merry Christmas!', bg: { dark: '#12301f', light: '#d6ecdc' }, hat: 'santa', held: 'gift', tree: true,
     fx: th => drift('fl', 40, [th === 'light' ? '#8fa8c0' : '#ffffff'], 4, 20, 940, 41, 5, 9) },
+  halloween: { text: 'Trick or treat!', bg: { dark: '#22142f', light: '#e8dcf3' }, hat: 'witch', held: 'pumpkin',
+    fx: () => disc(630, 40, 5, 5, '#fff3c4') + [24,52,80].map((y,i)=>`<g transform="translate(560,${y})"><g class="hb" style="animation-duration:${8+i*2}s;animation-delay:-${i*3}s"><g class="hA">${sprite(['U.....U','UU.U.UU','.UUUUU.','..U.U..'],0,0,3)}</g><g class="hB">${sprite(['..U.U..','.UUUUU.','UU.U.UU','U.....U'],0,0,3)}</g></g></g>`).join('') + [580,640,700,760].map((x,i)=>`<g transform="translate(${x},${122-(i%2?12:15)})"><g class="gw">${sprite(['..N..','.QQQ.','QYQYQ','QQQQQ','.QQQ.'],0,0,i%2?2:3)}</g></g>`).join('') + sprites('gh', 3, ['.WWW.','WKWKW','WWWWW','WWWWW','W.W.W'], 600, 900, 17, 3, 5, 7).replace(/class="gh"/g,'class="gh" opacity=".7"') },
   hanukkah: { text: 'Happy Hanukkah!', bg: { dark: '#10203d', light: '#d8e2f5' }, hat: 'kippah', menorah: true,
     fx: () => '' },
 };
@@ -162,6 +170,25 @@ function tiles([a, b, d]) {
   for (let x = 0; x < W; x += 16) o += `<rect x="${x}" y="131" width="8" height="8" fill="${d}"/><rect x="${x + 8}" y="123" width="4" height="4" fill="${b}" opacity=".35"/>`;
   return o;
 }
+
+// extra decor for the pixel characters: twinkling string lights across the top and small props on the ground (visible header area is x >= 560)
+const LIGHTS = { newyear: ['#facc15', '#ff6b9d', '#5ec8e5'], lunar: ['#ff4a3a', '#facc15'], valentine: ['#ff6b9d', '#ffffff'], holi: ['#f08fa8', '#facc15', '#5ec8e5', '#4ade80'], easter: ['#f08fa8', '#93c5fd', '#facc15'], eid: ['#fcd34d', '#ffffff'], midautumn: ['#fff3c4', '#f6c453'], diwali: ['#ffb347', '#ff6b3a', '#facc15'], thanksgiving: ['#f08a24', '#facc15'], christmas: ['#ef4444', '#4ade80', '#facc15', '#60a5fa'], hanukkah: ['#60a5fa', '#ffffff'] };
+function lights(id, theme) {
+  const cols = LIGHTS[id] || ['#facc15'], pts = [];
+  for (let i = 0; i < 24; i++) { const x = 572 + i * 16.5, y = 4 + 5 * Math.abs(Math.sin(i * Math.PI / 6)); pts.push([x, y]); }
+  const wire = 'M' + pts.map(p => p.join(' ')).join('L');
+  return `<path d="${wire}" fill="none" stroke="${theme === 'dark' ? '#556' : '#889'}" stroke-width="1" opacity=".7"/>` +
+    pts.map(([x, y], i) => `<g class="tw" style="animation-delay:-${(i * 0.37).toFixed(2)}s"><rect x="${x - 1.5}" y="${y}" width="3" height="4" fill="${cols[i % cols.length]}"/></g><rect x="${x - 4}" y="${y - 3}" width="8" height="10" fill="${cols[i % cols.length]}" opacity=".12"/>`).join('');
+}
+function ground(id, theme) {
+  const cols = LIGHTS[id] || ['#facc15'], r = rng(id.length * 31 + 5);
+  let o = '';
+  for (let i = 0; i < 18; i++) { // confetti / petals resting on the ground
+    const x = Math.round(570 + r() * 380); if (x > 840 && x < 950) continue;
+    o += `<rect x="${x}" y="${120 + Math.round(r() * 3)}" width="${r() > .5 ? 3 : 2}" height="2" fill="${cols[i % cols.length]}"/>`;
+  }
+  return o;
+}
 function scene(theme, id, ctx = {}) {
   const cfg = FEST[id], t = TH[theme]; const R = ctx.char || M.ROBOT; setPal(Object.assign({}, ctx.pal, R.pal));
   const C = 10, ty = typed('f', cfg.text, 10, 1.3, 88, C), bw = bubbleW(cfg.text);
@@ -173,7 +200,7 @@ function scene(theme, id, ctx = {}) {
     ty.css,
   ].join('\n');
   const bx = cfg.held ? 44 : 0, bR = R.bubbleR != null ? R.bubbleR : RX - 16, bY = R.bubbleY != null ? R.bubbleY : 34;
-  const hat = cfg.hat ? sprite(HATS[cfg.hat], R.hatRow, R.hatCol) : '';
+  const hat = cfg.hat ? (R.hd ? sprite(HATS[cfg.hat], R.hatY / 2 - 3, 41, 2) : sprite(HATS[cfg.hat], R.hatRow, R.hatCol)) : '';
   const splash = cfg.splash ? sprite(['', '', '...PP...........', '...PP......GG...', '', '.........BB.....', '..YY......PP....', '.......VV...GG..', '....BB..........'], 1) : '';
   const eggs = cfg.eggs ? [[60, '#f08fa8'], [160, '#93c5fd'], [270, '#facc15'], [390, '#b392f0'], [510, '#4ade80']].map(([x, col]) =>
     `<g transform="translate(${x},106)"><rect x="3" y="0" width="6" height="3" fill="${col}"/><rect x="0" y="3" width="12" height="9" fill="${col}"/><rect x="3" y="12" width="6" height="3" fill="${col}"/><rect x="3" y="6" width="6" height="2" fill="#ffffff" opacity=".7"/></g>`).join('') : '';
@@ -182,11 +209,12 @@ function scene(theme, id, ctx = {}) {
   const tree = cfg.tree ? `<g transform="translate(70,${122 - 8 * 6})">${sprite(['....Y....', '...TTT...', '..TTRTT..', '...TTT...', '..TTBTT..', '.TTTTTTT.', '....N....', '....N....'], 0, 0, 6)}</g>` : '';
   const hd = id === 'hello' && R.backdrop;
   const inner = (hd ? R.backdrop(theme) : sparkles(t, [[60, 40, 2.6, 0], [330, 30, 3, 2.2], [450, 96, 2.2, .6]])) +
-    tree + diyas + eggs + (cfg.menorah ? menorah(ctx.night || 1) : '') + cfg.fx(theme) +
+    (R.hd ? lights(id, theme) + `<g transform="translate(470,0)">${tree + diyas + eggs}</g><g transform="translate(220,0)">${cfg.menorah ? menorah(ctx.night || 1) : ''}</g>` + cfg.fx(theme) + `<g transform="translate(500,0)">${cfg.fx(theme)}</g>` + ground(id, theme)
+      : tree + diyas + eggs + (cfg.menorah ? menorah(ctx.night || 1) : '') + cfg.fx(theme)) +
     `<g transform="translate(${RX},26)"><g class="a fHop">` + (cfg.hat ? '' : R.antenna) + R.body(true) + R.legs + splash + hat +
     `<g class="a fDown">${R.armDown}</g><g class="alt a fUp1">${R.up1}</g><g class="alt a fUp2">${R.up2}</g>` +
     `<g class="a fCalm"><g class="eyes">${R.eyes}</g></g><g class="alt a fHappy">${R.happy}</g>` +
-    (cfg.held ? `<g transform="translate(0,${R.holdDy * PX})">` + (cfg.held === 'fanous' ? `<g class="gw">${HELD[cfg.held]}</g>` : HELD[cfg.held]) + '</g>' : '') +
+    (cfg.held ? (R.hd ? `<g transform="translate(${98 + 24},52) scale(.4)">` : `<g transform="translate(0,${R.holdDy * PX})">`) + (cfg.held === 'fanous' ? `<g class="gw">${HELD[cfg.held]}</g>` : HELD[cfg.held]) + '</g>' : '') +
     `</g></g>` + (hd && R.front ? R.front(theme) : '') +
     `<g class="alt a fBub">${bubble(t, bR - bx, bY, bw, 50)}${bubbleText(t, bR - bx - bw + 22, bY + 26, ty.spans)}</g>`;
   const tl = R.tile && id === 'hello' ? tiles(R.tile) : '';
@@ -210,7 +238,7 @@ const festivals = [ // earlier entries win when windows overlap
   { id: 'hanukkah', ranges: y => findCal(y, 'hebrew', 'Kislev', 25).map(n => [n, n + 7]) },
 ];
 
-const DRAW = Object.assign({}, ...Object.keys(FEST).map(id => ({ [id]: (theme, ctx) => scene(theme, id, Object.assign({ char: charFor(id) }, ctx)) })), { halloween: theme => M.pumpkin(theme) });
+const DRAW = Object.assign({}, ...Object.keys(FEST).map(id => ({ [id]: (theme, ctx) => scene(theme, id, Object.assign({ char: charFor(id) }, ctx)) })));
 
 // today's festival, or null. Returns { id, draw(theme) }
 function pick(now = new Date()) {
