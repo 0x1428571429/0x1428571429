@@ -1,22 +1,32 @@
 const fs = require('fs');
 const https = require('https');
-const MASCOTS = Object.assign({}, require('./mascots').DESIGNS, require('./cyber').DESIGNS);
+const M = require('./mascots');
+const MASCOTS = M.DESIGNS;
+const { CH } = require('./characters');
 
 const FESTIVALS = require('./festivals');
-const ORDINARY = ['hacker', 'neon', 'drone', 'octo', 'cat', ...FESTIVALS.CHARS.map(k => 'char:' + k)]; // 'char:<k>' = plain greeting by character <k>
+const EXTRA_BG = { octo: { dark: '#1d1530', light: '#e9e1f5' }, cat: { dark: '#2b1d24', light: '#f6e3ea' } };
+const BOTW = ['link', 'mipha', 'revali', 'urbosa', 'daruk', 'sage'];
+const ORDINARY = [...BOTW, 'octo', 'cat', ...Object.keys(CH).filter(k => !BOTW.includes(k))];
 
-// Festival mascot on festival days, otherwise rotate ordinary mascots daily (UTC+8).
-// Override for testing: MASCOT=<design> or MASCOT=fest-<festival> (e.g. fest-diwali).
+// Today's theme: { draw(theme) -> mascot svg, bg: {dark, light} } (UTC+8).
+// Festival days get the festival look, other days rotate through ORDINARY, one character per day.
+// Override for testing: MASCOT=<name> (e.g. link, octo) or MASCOT=fest-<festival> (e.g. fest-diwali).
+function themeFor(name) {
+  if (CH[name]) return { id: name, bg: CH[name].bg, draw: t => FESTIVALS.hello(t, name) };
+  if (EXTRA_BG[name]) return { id: name, bg: EXTRA_BG[name], draw: t => MASCOTS[name](t) };
+  return null;
+}
 function pickMascot(now = new Date()) {
   const env = process.env.MASCOT;
-  if (env && MASCOTS[env]) return theme => MASCOTS[env](theme);
-  if (env && env.startsWith('fest-') && FESTIVALS.DRAW[env.slice(5)]) return theme => FESTIVALS.DRAW[env.slice(5)](theme, { night: 3 });
-  if (env && env.startsWith('char:') && FESTIVALS.CHARS.includes(env.slice(5))) return theme => FESTIVALS.hello(theme, env.slice(5));
+  if (env) {
+    if (env.startsWith('fest-') && FESTIVALS.DRAW[env.slice(5)]) { const id = env.slice(5); return { id, bg: (FESTIVALS.FEST[id] || {}).bg || FESTIVALS.HALLOWEEN_BG, draw: t => FESTIVALS.DRAW[id](t, { night: 3 }) }; }
+    const e = themeFor(env); if (e) return e;
+  }
   const f = FESTIVALS.pick(now);
-  if (f) return f.draw;
+  if (f) return f;
   const day = Math.floor((now.getTime() + 8 * 3600e3) / 86400000);
-  const name = ORDINARY[day % ORDINARY.length];
-  return name.startsWith('char:') ? theme => FESTIVALS.hello(theme, name.slice(5)) : theme => MASCOTS[name](theme);
+  return themeFor(ORDINARY[day % ORDINARY.length]);
 }
 
 const TOKEN = process.env.METRICS_TOKEN || '';
@@ -24,10 +34,7 @@ const USER = '0x1428571429';
 const NAME = '0x142857';
 const STAR_LIMIT = 10;
 
-const C = {
-  dark: { bg: '#111111', text: '#e8e8e8', dim: '#666666', border: '#2a2a2a' },
-  light: { bg: '#f5f5f5', text: '#2f3437', dim: '#888888', border: '#e8e8e8' },
-};
+const C = M.TH; // colour tokens, re-derived from today's theme background in main()
 
 const MONO = "ui-monospace,Menlo,Consolas,monospace";
 const SANS = "system-ui,-apple-system,sans-serif";
@@ -137,10 +144,31 @@ const LC = {JavaScript:'#f0db4f',TypeScript:'#2f74c0',HTML:'#e44d26',CSS:'#264de
 function make(name, theme, h, draw) {
   const t = C[theme];
   let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${h}" viewBox="0 0 ${W} ${h}">\n`;
-  svg += `<rect width="${W}" height="${h}" fill="${t.bg}" rx="6"/>\n`;
+  // one continuous panel: only the header's top corners are rounded; the others are square and get a thin divider
+  const top = name.startsWith('header'), last = name.startsWith('project');
+  svg += last ? `<path d="M0 0H${W}V${h - 6}A6 6 0 0 1 ${W - 6} ${h}H6A6 6 0 0 1 0 ${h - 6}Z" fill="${t.bg}"/>\n<line x1="${P}" y1="0.5" x2="${W - P}" y2="0.5" stroke="${t.border}" stroke-width="1"/>\n` :
+         top ? `<path d="M0 ${h}V6A6 6 0 0 1 6 0H${W - 6}A6 6 0 0 1 ${W} 6V${h}Z" fill="${t.bg}"/>\n`
+             : `<rect width="${W}" height="${h}" fill="${t.bg}"/>\n<line x1="${P}" y1="0.5" x2="${W - P}" y2="0.5" stroke="${t.border}" stroke-width="1"/>\n`;
   svg += draw(t);
   svg += '</svg>';
   fs.writeFileSync(name, svg);
+}
+
+// Mascot scene (a full 960x140 SVG from mascots.js) embedded into the header's right side, scaled to fit.
+const MASCOT_SVG = {};
+function embed(theme, h) {
+  const svg = MASCOT_SVG[theme]; if (!svg) return '';
+  const css = (svg.match(/<style>([\s\S]*?)<\/style>/) || [])[1] || '';
+  const inner = svg.slice(svg.indexOf('</style>') + 8).replace(/<\/svg>\s*$/, '');
+  const k = 0.9, tx = Math.round(W - 28 - (W - 28) * k), ty = Math.max(0, h - 128);
+  return `<clipPath id="mc"><rect x="560" y="0" width="${W - 560}" height="${h}"/></clipPath>\n<g clip-path="url(#mc)"><style>${css}</style><g transform="translate(${tx},${ty}) scale(${k})">${inner}</g></g>\n`;
+}
+// HUD hearts, top-right: 4 full + 1 empty
+function hearts(t) {
+  const H = ['.X.X.', 'XXXXX', '.XXX.', '..X..'];
+  let o = '';
+  for (let i = 0; i < 5; i++) H.forEach((r, y) => [...r].forEach((c, x) => { if (c === 'X') o += `<rect x="${W - 28 - 5 * 15 - 4 * 8 + i * 23 + x * 3}" y="${8 + y * 3}" width="3" height="3" fill="${i < 4 ? '#e5484d' : t.edge}"/>`; }));
+  return o + '\n';
 }
 
 // === HEADER ===
@@ -150,6 +178,7 @@ function genHeader(theme, u, quote, totalStars) {
     ['repos', u ? fmt(u.public_repos||0) : '-'],
     ['followers', u ? fmt(u.followers||0) : '-'],
   ];
+  const hasMascot = !!MASCOT_SVG[theme];
   const hasQuote = quote && quote.en;
   const h = hasQuote ? 165 : 100;
 
@@ -157,13 +186,14 @@ function genHeader(theme, u, quote, totalStars) {
     let o = '';
     o += `<text x="${P}" y="42" fill="${t.text}" font-size="28" font-family="${SANS}" font-weight="600">There is no place like 127.0.0.1</text>\n`;
     if(hasQuote) {
-      o+=`<text x="${P}" y="76" fill="${t.dim}" font-size="16" font-family="${SANS}">${esc(tr(quote.en,75))}</text>\n`;
+      o+=`<text x="${P}" y="76" fill="${t.dim}" font-size="16" font-family="${SANS}">${esc(tr(quote.en,56))}</text>\n`;
       o+=`<text x="${P}" y="98" fill="${t.dim}" font-size="16" font-family="${MONO}">${esc('—— '+quote.author)}</text>\n`;
     }
     const lineY = hasQuote ? 124 : 76;
     const statY = lineY + 24;
-    o += `<line x1="${P}" y1="${lineY}" x2="${W-P}" y2="${lineY}" stroke="${t.border}" stroke-width="1"/>\n`;
+    o += `<line x1="${P}" y1="${lineY}" x2="${hasMascot ? 540 : W-P}" y2="${lineY}" stroke="${t.border}" stroke-width="1"/>\n`;
 
+    o += embed(theme, h) + hearts(t);
     stats.forEach(([l,v],i)=>{
       const sx=P+i*180;
       o+=`<text x="${sx}" y="${statY}" fill="${t.text}" font-size="16" font-family="${MONO}">${v}</text>\n`;
@@ -230,12 +260,13 @@ async function main() {
   const quote = pickQuote(quotes);
 
   console.log('Generating...');
+  const day = pickMascot(); M.useTheme(day.bg); console.log('  theme:', day.id);
+  for (const th of ['dark','light']) MASCOT_SVG[th] = day.draw(th);
   for(const theme of['dark','light']){
     genHeader(theme, u, quote, stars);
     genBlog(theme, posts);
     genActivity(theme, evs);
     genProjects(theme, repos);
-    fs.writeFileSync(`mascot.${theme}.svg`, pickMascot()(theme));
     console.log(`  ${theme} done`);
   }
   console.log('All OK!');

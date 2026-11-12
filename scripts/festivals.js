@@ -113,7 +113,7 @@ const HELD = { // drawn left of the robot's left arm (cols < 0)
 };
 
 const { CH } = require('./characters');
-const CHARS = Object.keys(CH);
+const CHARS = Object.keys(CH).filter(k => !CH[k].hd); // HD-2D sprites have no hat/held anchors
 // each festival has its own fixed character (round-robin over the character list)
 const charFor = id => CH[CHARS[Object.keys(FEST).indexOf(id) % CHARS.length]];
 
@@ -141,7 +141,7 @@ const FEST = {
   thanksgiving: { text: 'Happy Thanksgiving!', bg: { dark: '#33220f', light: '#efdcc0' }, hat: 'pilgrim',
     fx: () => drift('fl', 26, ['#f08a24', '#c2620f', '#facc15', '#ef5b6b'], 6, 30, 930, 31, 6, 11) },
   christmas: { text: 'Merry Christmas!', bg: { dark: '#12301f', light: '#d6ecdc' }, hat: 'santa', held: 'gift', tree: true,
-    fx: () => drift('fl', 40, ['#ffffff'], 4, 20, 940, 41, 5, 9) },
+    fx: th => drift('fl', 40, [th === 'light' ? '#8fa8c0' : '#ffffff'], 4, 20, 940, 41, 5, 9) },
   hanukkah: { text: 'Happy Hanukkah!', bg: { dark: '#10203d', light: '#d8e2f5' }, hat: 'kippah', menorah: true,
     fx: () => '' },
 };
@@ -156,6 +156,12 @@ function menorah(night) {
   return `<g transform="translate(400,${122 - 9 * px})">${body}<g class="gw">${flames}</g></g>`;
 }
 
+// 2D-game ground strip: grass/stone top row + brick row with a checker pattern
+function tiles([a, b, d]) {
+  let o = `<rect x="0" y="123" width="${W}" height="8" fill="${a}"/><rect x="0" y="131" width="${W}" height="9" fill="${b}"/>`;
+  for (let x = 0; x < W; x += 16) o += `<rect x="${x}" y="131" width="8" height="8" fill="${d}"/><rect x="${x + 8}" y="123" width="4" height="4" fill="${b}" opacity=".35"/>`;
+  return o;
+}
 function scene(theme, id, ctx = {}) {
   const cfg = FEST[id], t = TH[theme]; const R = ctx.char || M.ROBOT; setPal(Object.assign({}, ctx.pal, R.pal));
   const C = 10, ty = typed('f', cfg.text, 10, 1.3, 88, C), bw = bubbleW(cfg.text);
@@ -166,26 +172,29 @@ function scene(theme, id, ctx = {}) {
     kf('fHop', [[8, 10]], 'transform', 'translateY(-8px)', 'translateY(0)') + '.fHop{animation-name:fHop}',
     ty.css,
   ].join('\n');
-  const bx = cfg.held ? 44 : 0;
-  const hat = cfg.hat ? sprite(HATS[cfg.hat], 0) : '';
+  const bx = cfg.held ? 44 : 0, bR = R.bubbleR != null ? R.bubbleR : RX - 16, bY = R.bubbleY != null ? R.bubbleY : 34;
+  const hat = cfg.hat ? sprite(HATS[cfg.hat], R.hatRow, R.hatCol) : '';
   const splash = cfg.splash ? sprite(['', '', '...PP...........', '...PP......GG...', '', '.........BB.....', '..YY......PP....', '.......VV...GG..', '....BB..........'], 1) : '';
   const eggs = cfg.eggs ? [[60, '#f08fa8'], [160, '#93c5fd'], [270, '#facc15'], [390, '#b392f0'], [510, '#4ade80']].map(([x, col]) =>
     `<g transform="translate(${x},106)"><rect x="3" y="0" width="6" height="3" fill="${col}"/><rect x="0" y="3" width="12" height="9" fill="${col}"/><rect x="3" y="12" width="6" height="3" fill="${col}"/><rect x="3" y="6" width="6" height="2" fill="#ffffff" opacity=".7"/></g>`).join('') : '';
   const diyas = cfg.diyas ? [50, 120, 190, 260, 330, 400, 470, 540].map(x =>
     `<g transform="translate(${x},0)"><rect x="0" y="116" width="15" height="3" fill="#6b4a2b"/><rect x="3" y="119" width="9" height="3" fill="#6b4a2b"/><g class="gw"><rect x="6" y="107" width="3" height="6" fill="#ffd23f"/></g></g>`).join('') : '';
   const tree = cfg.tree ? `<g transform="translate(70,${122 - 8 * 6})">${sprite(['....Y....', '...TTT...', '..TTRTT..', '...TTT...', '..TTBTT..', '.TTTTTTT.', '....N....', '....N....'], 0, 0, 6)}</g>` : '';
-  const inner = sparkles(t, [[60, 40, 2.6, 0], [330, 30, 3, 2.2], [450, 96, 2.2, .6]]) +
-    tree + diyas + eggs + (cfg.menorah ? menorah(ctx.night || 1) : '') + cfg.fx() +
+  const hd = id === 'hello' && R.backdrop;
+  const inner = (hd ? R.backdrop(theme) : sparkles(t, [[60, 40, 2.6, 0], [330, 30, 3, 2.2], [450, 96, 2.2, .6]])) +
+    tree + diyas + eggs + (cfg.menorah ? menorah(ctx.night || 1) : '') + cfg.fx(theme) +
     `<g transform="translate(${RX},26)"><g class="a fHop">` + (cfg.hat ? '' : R.antenna) + R.body(true) + R.legs + splash + hat +
     `<g class="a fDown">${R.armDown}</g><g class="alt a fUp1">${R.up1}</g><g class="alt a fUp2">${R.up2}</g>` +
     `<g class="a fCalm"><g class="eyes">${R.eyes}</g></g><g class="alt a fHappy">${R.happy}</g>` +
-    (cfg.held ? (cfg.held === 'fanous' ? `<g class="gw">${HELD[cfg.held]}</g>` : HELD[cfg.held]) : '') +
-    `</g></g>` +
-    `<g class="alt a fBub">${bubble(t, RX - 16 - bx, 34, bw, 50)}${bubbleText(t, RX - 16 - bx - bw + 22, 60, ty.spans)}</g>`;
-  return render(theme, C, css, inner, { bg: cfg.bg });
+    (cfg.held ? `<g transform="translate(0,${R.holdDy * PX})">` + (cfg.held === 'fanous' ? `<g class="gw">${HELD[cfg.held]}</g>` : HELD[cfg.held]) + '</g>' : '') +
+    `</g></g>` + (hd && R.front ? R.front(theme) : '') +
+    `<g class="alt a fBub">${bubble(t, bR - bx, bY, bw, 50)}${bubbleText(t, bR - bx - bw + 22, bY + 26, ty.spans)}</g>`;
+  const tl = R.tile && id === 'hello' ? tiles(R.tile) : '';
+  return render(theme, C, css, inner, { ground: tl });
 }
 
 // ---------------------------------------------------------------- calendar
+const HALLOWEEN_BG = { dark: '#22142f', light: '#e8dcf3' };
 const festivals = [ // earlier entries win when windows overlap
   { id: 'newyear', ranges: y => [[dn(y, 12, 31), dn(y + 1, 1, 2)]] },
   { id: 'lunar', ranges: y => findCal(y, 'chinese', 1, 1).map(n => [n - 1, n + 6]) },
@@ -208,14 +217,14 @@ function pick(now = new Date()) {
   const today = localDay(now), y = new Date(today * DAY).getUTCFullYear();
   for (const f of festivals) {
     for (const yy of [y - 1, y, y + 1]) {
-      for (const [s, e] of f.ranges(yy)) if (today >= s && today <= e) { const ctx = { night: today - s + 1 }; return { id: f.id, draw: theme => DRAW[f.id](theme, ctx) }; }
+      for (const [s, e] of f.ranges(yy)) if (today >= s && today <= e) { const ctx = { night: today - s + 1 }; return { id: f.id, bg: (FEST[f.id] || {}).bg || HALLOWEEN_BG, draw: theme => DRAW[f.id](theme, ctx) }; }
     }
   }
   return null;
 }
 
 const hello = (theme, k) => scene(theme, 'hello', { char: CH[k] });
-module.exports = { pick, DRAW, festivals, FEST, CHARS, hello };
+module.exports = { HALLOWEEN_BG, pick, DRAW, festivals, FEST, CHARS, hello };
 
 if (require.main === module) {
   const out = process.argv[2] || path.join(__dirname, '..', 'mascots');

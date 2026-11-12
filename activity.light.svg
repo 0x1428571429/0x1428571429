@@ -1,24 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="422" viewBox="0 0 960 422">
-<rect width="960" height="422" fill="#f5f5f5" rx="6"/>
-<text x="28" y="46" fill="#2f3437" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">Recent Stars</text>
-<text x="28" y="82" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2d ago</text>
-<text x="183" y="82" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">HKUDS/CLI-Anything</text>
-<text x="28" y="116" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-10-05</text>
-<text x="183" y="116" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Droid-Deck/DroidDeck</text>
-<text x="28" y="150" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-29</text>
-<text x="183" y="150" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">iisu-network/iiSU</text>
-<text x="28" y="184" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-26</text>
-<text x="183" y="184" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">0x1428571429/English-for-Software-Product-Development</text>
-<text x="28" y="218" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-26</text>
-<text x="183" y="218" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">frappe/books</text>
-<text x="28" y="252" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-26</text>
-<text x="183" y="252" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">shanraisshan/claude-code-best-practice</text>
-<text x="28" y="286" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-26</text>
-<text x="183" y="286" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">uheartbeast/youtube-tutorials</text>
-<text x="28" y="320" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-25</text>
-<text x="183" y="320" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">anomalyco/opencode</text>
-<text x="28" y="354" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-16</text>
-<text x="183" y="354" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">foxihd/hugo-brewm</text>
-<text x="28" y="388" fill="#888888" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-06-06</text>
-<text x="183" y="388" fill="#2f3437" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">AIEraDev/Clypra</text>
+<rect width="960" height="422" fill="#dcedf5"/>
+<line x1="28" y1="0.5" x2="932" y2="0.5" stroke="#c2d1d8" stroke-width="1"/>
+<text x="28" y="46" fill="#1f2122" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">Recent Stars</text>
+<text x="28" y="82" fill="#61686c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2d ago</text>
+<text x="183" y="82" fill="#1f2122" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">HKUDS/CLI-Anything</text>
+<text x="28" y="116" fill="#61686c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-10-05</text>
+<text x="183" y="116" fill="#1f2122" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Droid-Deck/DroidDeck</text>
+<text x="28" y="150" fill="#61686c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-29</text>
+<text x="183" y="150" fill="#1f2122" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">iisu-network/iiSU</text>
+<text x="28" y="184" fill="#61686c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-26</text>
+<text x="183" y="184" fill="#1f2122" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">0x1428571429/English-for-Software-Product-Development</text>
+<text x="28" y="218" fill="#61686c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-26</text>
+<text x="183" y="218" fill="#1f2122" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">frappe/books</text>
+<text x="28" y="252" fill="#61686c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-26</text>
+<text x="183" y="252" fill="#1f2122" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">shanraisshan/claude-code-best-practice</text>
+<text x="28" y="286" fill="#61686c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-26</text>
+<text x="183" y="286" fill="#1f2122" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">uheartbeast/youtube-tutorials</text>
+<text x="28" y="320" fill="#61686c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-25</text>
+<text x="183" y="320" fill="#1f2122" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">anomalyco/opencode</text>
+<text x="28" y="354" fill="#61686c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-07-16</text>
+<text x="183" y="354" fill="#1f2122" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">foxihd/hugo-brewm</text>
+<text x="28" y="388" fill="#61686c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-06-06</text>
+<text x="183" y="388" fill="#1f2122" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">AIEraDev/Clypra</text>
 </svg>

@@ -11,9 +11,25 @@ const PAL = {
   R: '#ef5b6b', Y: '#facc15', C: '#f1dcb8', c: '#cda878', P: '#f08fa8', F: '#5a5a5a', S: '#101a14', Q: '#f08a24', q: '#c2620f', N: '#6b4a2b', T: '#3f9b4a', Z: '#3b82f6', X: '#93c5fd', V: '#8957e5', U: '#6e40c9', L: '#b392f0',
 };
 const TH = {
-  dark: { gray: '#2b2b2b', line: '#444444', panel: '#1a1a1a', text: '#e8e8e8', dim: '#777777' },
-  light: { gray: '#dcdcdc', line: '#bdbdbd', panel: '#f5f5f5', text: '#2f3437', dim: '#888888' },
+  dark: { gray: '#111111', line: '#2a2a2a', edge: '#5a5a5a', panel: '#1c1c1c', text: '#e8e8e8', dim: '#8c8c8c' },
+  light: { gray: '#f5f5f5', line: '#e0e0e0', edge: '#b5b5b5', panel: '#ffffff', text: '#2f3437', dim: '#6b6b6b' },
 };
+
+// ---------- daily colour theme: derive every token (text, dim, border...) from one background colour, with contrast checks ----------
+const hex2 = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+const toHex = a => '#' + a.map(v => Math.round(Math.max(0, Math.min(255, v))).toString(16).padStart(2, '0')).join('');
+const mix = (a, b, t) => { const A = hex2(a), B = hex2(b); return toHex(A.map((v, i) => v + (B[i] - v) * t)); };
+const lum = h => { const c = hex2(h).map(v => { v /= 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }); return .2126 * c[0] + .7152 * c[1] + .0722 * c[2]; };
+const contrast = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05); };
+function tokens(bg, mode) {
+  const dark = mode === 'dark', ink = dark ? '#ffffff' : '#000000';
+  const text = mix(bg, ink, dark ? .92 : .86);
+  let dim = mix(text, bg, .35);
+  for (let i = 0; i < 10 && contrast(dim, bg) < 4.6; i++) dim = mix(dim, text, .2);
+  const border = mix(bg, ink, dark ? .16 : .12);
+  return { bg, gray: bg, text, dim, border, line: border, edge: mix(bg, ink, dark ? .38 : .32), panel: dark ? mix(bg, '#ffffff', .07) : mix(bg, '#ffffff', .7) };
+}
+function useTheme(bgPair) { for (const m of ['dark', 'light']) Object.assign(TH[m], tokens(bgPair[m], m)); }
 let CUR = PAL; // active sprite palette
 function setPal(extra) { CUR = Object.assign({}, PAL, extra || {}); }
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -68,8 +84,8 @@ function typed(prefix, text, t0, step, tEnd, cycle) {
 function bubble(t, r, by, bw, bh) {
   const bx = r - bw, mid = by + bh / 2;
   return `<g shape-rendering="crispEdges">` +
-    `<path d="M${bx + 4} ${by}H${r - 4}V${by + 4}H${r}V${by + bh - 4}H${r - 4}V${by + bh}H${bx + 4}V${by + bh - 4}H${bx}V${by + 4}H${bx + 4}Z" fill="${t.panel}" stroke="${t.dim}" stroke-width="2"/>` +
-    `<path d="M${r} ${mid - 9}H${r + 6}V${mid - 3}H${r + 12}V${mid + 3}H${r + 6}V${mid + 9}H${r}" fill="${t.panel}" stroke="${t.dim}" stroke-width="2"/>` +
+    `<path d="M${bx + 4} ${by}H${r - 4}V${by + 4}H${r}V${by + bh - 4}H${r - 4}V${by + bh}H${bx + 4}V${by + bh - 4}H${bx}V${by + 4}H${bx + 4}Z" fill="${t.panel}" stroke="${t.edge}" stroke-width="2"/>` +
+    `<path d="M${r} ${mid - 9}H${r + 6}V${mid - 3}H${r + 12}V${mid + 3}H${r + 6}V${mid + 9}H${r}" fill="${t.panel}" stroke="${t.edge}" stroke-width="2"/>` +
     `<rect x="${r - 1}" y="${mid - 8}" width="2" height="16" fill="${t.panel}"/></g>`;
 }
 const bubbleW = x => Math.round((typeof x === 'string' ? [...x].reduce((a, ch) => a + (ch.charCodeAt(0) > 255 ? 19 : 10.8), 0) : x * 10.8) + 44);
@@ -84,9 +100,10 @@ function sparkles(t, pts) {
 
 function render(theme, cycle, css, inner, opt = {}) {
   const t = TH[theme];
-  const bg = opt.bg ? opt.bg[theme] : t.gray;
+  const bg = t.gray; // same surface as the other cards (opt.bg is ignored on purpose)
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-<rect width="${W}" height="${H}" fill="${bg}" rx="6"/>
+<path d="M0 0H${W}V${H - 6}A6 6 0 0 1 ${W - 6} ${H}H6A6 6 0 0 1 0 ${H - 6}Z" fill="${bg}"/>
+<line x1="28" y1="0.5" x2="${W - 28}" y2="0.5" stroke="${t.line}" stroke-width="1"/>
 <style>
 .a{animation-duration:${cycle}s;animation-iteration-count:infinite;animation-timing-function:step-end}
 .eyes{transform-box:fill-box;transform-origin:center;animation:blink 4.7s step-end infinite}
@@ -98,7 +115,7 @@ function render(theme, cycle, css, inner, opt = {}) {
 @media (prefers-reduced-motion:reduce){*{animation:none!important}.tc{fill-opacity:1!important}.alt{display:none!important}}
 ${css}
 </style>
-<line x1="28" y1="123" x2="932" y2="123" stroke="${t.line}" stroke-width="2" stroke-dasharray="8 8"/>
+${opt.ground || `<line x1="28" y1="123" x2="932" y2="123" stroke="${t.edge}" stroke-opacity=".5" stroke-width="2" stroke-dasharray="8 8"/>`}
 ${inner}
 </svg>`;
 }
@@ -318,7 +335,7 @@ function pumpkin(theme) {
 }
 
 const DESIGNS = { sleepy, coder, walker, cat, octo, pumpkin, pumpkin };
-module.exports = { DESIGNS, sleepy, coder, walker, cat, octo, pumpkin, ROBOT, RX, render, sparkles, TH, H, W, PX, MONO, esc, sprite, kf, inv, gate, typed, bubble, bubbleW, bubbleText, setPal };
+module.exports = { useTheme, tokens, contrast, DESIGNS, sleepy, coder, walker, cat, octo, pumpkin, ROBOT, RX, render, sparkles, TH, H, W, PX, MONO, esc, sprite, kf, inv, gate, typed, bubble, bubbleW, bubbleText, setPal };
 
 if (require.main === module) {
   const out = process.argv[2] || path.join(__dirname, '..', 'mascots');
