@@ -2,7 +2,7 @@
 <rect width="960" height="422" fill="#e2e8f6"/>
 <line x1="28" y1="0.5" x2="932" y2="0.5" stroke="#c7ccd8" stroke-width="1"/>
 <text x="28" y="46" fill="#202022" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">Recent Stars</text>
-<text x="28" y="82" fill="#64666c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2d ago</text>
+<text x="28" y="82" fill="#64666c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">3d ago</text>
 <text x="183" y="82" fill="#202022" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">HKUDS/CLI-Anything</text>
 <text x="28" y="116" fill="#64666c" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">2026-10-05</text>
 <text x="183" y="116" fill="#202022" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Droid-Deck/DroidDeck</text>
