@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="218" viewBox="0 0 960 218">
-<path d="M0 0H960V212A6 6 0 0 1 954 218H6A6 6 0 0 1 0 212Z" fill="#f6e3ea"/>
-<line x1="28" y1="0.5" x2="932" y2="0.5" stroke="#d8c8ce" stroke-width="1"/>
-<text x="28" y="46" fill="#222021" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">Projects</text>
-<text x="28" y="82" fill="#6c6467" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 2</text>
-<text x="183" y="82" fill="#222021" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">0x1428571429</text>
-<text x="28" y="116" fill="#6c6467" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 1</text>
-<text x="183" y="116" fill="#222021" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">English-for-Software-Product-Development</text>
-<text x="28" y="150" fill="#6c6467" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 0</text>
-<text x="183" y="150" fill="#222021" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">rushi-guan</text>
-<text x="28" y="184" fill="#6c6467" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 0</text>
-<text x="183" y="184" fill="#222021" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Hackintosh-MSI-Z490-Godlike</text>
+<path d="M0 0H960V212A6 6 0 0 1 954 218H6A6 6 0 0 1 0 212Z" fill="#d9efee"/>
+<line x1="28" y1="0.5" x2="932" y2="0.5" stroke="#bfd2d1" stroke-width="1"/>
+<text x="28" y="46" fill="#1e2121" font-size="28" font-family="system-ui,-apple-system,sans-serif" font-weight="600">Projects</text>
+<text x="28" y="82" fill="#5f6969" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 2</text>
+<text x="183" y="82" fill="#1e2121" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">0x1428571429</text>
+<text x="28" y="116" fill="#5f6969" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 1</text>
+<text x="183" y="116" fill="#1e2121" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">English-for-Software-Product-Development</text>
+<text x="28" y="150" fill="#5f6969" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 0</text>
+<text x="183" y="150" fill="#1e2121" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">rushi-guan</text>
+<text x="28" y="184" fill="#5f6969" font-size="16" font-family="ui-monospace,Menlo,Consolas,monospace" dominant-baseline="central">★ 0</text>
+<text x="183" y="184" fill="#1e2121" font-size="16" font-family="system-ui,-apple-system,sans-serif" dominant-baseline="central">Hackintosh-MSI-Z490-Godlike</text>
 </svg>
